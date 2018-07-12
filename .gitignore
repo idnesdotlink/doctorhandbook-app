@@ -11,6 +11,7 @@ thumbs.db
 .tmp/
 platforms/
 plugins/
+jsconfig.json
 www/*
 !www/.gitkeep
 typings/
