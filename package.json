@@ -6,8 +6,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "add-platform:android": "./add-platform-android.sh",
-    "add-platform:ios": "./add-platform-ios.sh"
+    "platform:android": "./add-platform-android.sh",
+    "platform:ios": "./add-platform-ios.sh"
   },
   "author": "Doctorhandbook Team",
   "license": "MIT",
