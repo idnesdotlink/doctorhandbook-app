@@ -1,4 +1,4 @@
-# Vue Cordova Doctorhandbook
+# Doctorhandbook App
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com)
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](https://github.com/idnesdotlink/doctorhandbook-app/blob/master/LICENSE)
