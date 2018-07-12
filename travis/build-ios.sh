@@ -7,7 +7,7 @@ set -e
 
 # if [[ "$TRAVIS_BRANCH" == "develop" ]]
 # then
-#     cordova build ios
+    cordova build ios
 # else
 #     cordova build ios --prod --release
 # fi

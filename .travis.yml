@@ -53,9 +53,9 @@ before_cache:
 #   - $HOME/.cache/yarn/v1/
 before_install:
 - export LANG=en_US.UTF-8
-- yes | sdkmanager "platforms;android-27"
-# - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update ; brew install yarn ios-sim
-#   jq ios-deploy cocoapods ; rvm use system ; pod setup ; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./travis/sdk-manager-licenses.sh ; fi
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update ; brew install yarn ios-sim
+  jq ios-deploy cocoapods ; rvm use system ; pod setup ; fi
 - nvm install 8
 # - yarn global add cordova
 install:
@@ -69,7 +69,7 @@ install:
 # - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then ./travis/addkeys.sh ; fi
 script:
 - yarn install
-# - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then ./travis/build-ios.sh && ./travis/package-ios.sh ; fi
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then ./travis/build-ios.sh && ./travis/package-ios.sh ; fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./travis/build-android.sh && ./travis/package-android.sh ; fi
 env:
   global:
