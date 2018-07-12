@@ -5,9 +5,10 @@
   "description": "Doctor Handbook Application.",
   "main": "index.js",
   "scripts": {
+    "dev": "",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "platform:android": "./add-platform-android.sh",
-    "platform:ios": "./add-platform-ios.sh"
+    "platform:android": "./script/add-platform-android.sh",
+    "platform:ios": "./script/add-platform-ios.sh"
   },
   "author": "Doctorhandbook Team",
   "license": "MIT",
