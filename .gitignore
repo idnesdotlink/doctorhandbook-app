@@ -12,6 +12,7 @@ thumbs.db
 .tmp/
 platforms/
 plugins/
+!.compiler/webpack/plugins/
 jsconfig.json
 www/*
 !www/.gitkeep
