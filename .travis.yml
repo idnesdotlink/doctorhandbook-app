@@ -1,10 +1,3 @@
-# osx_image: xcode8.3
-# sudo: required
-# dist: trusty
-# branches:
-#   only:
-#   - master
-#   - develop
 matrix:
   include:
   - os: linux
@@ -25,75 +18,48 @@ matrix:
     addons:
       apt:
         update: true
-        # sources:
-        # - sourceline: deb https://dl.yarnpkg.com/debian/ stable main
-        #   key_url: https://dl.yarnpkg.com/debian/pubkey.gpg
         packages:
         - oracle-java8-installer
         - oracle-java8-set-default
         - sshpass
-        # - yarn
         - jq
     licenses:
     - android-sdk-preview-license-.+
     - android-sdk-license-.+
     - google-gdk-license-.+
-  # - os: osx
-  #   language: objective-c
-  #   osx_image: xcode8.3
 before_cache:
 - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
 - rm -f  $HOME/.gradle/caches/transforms-1/transforms-1.lock
 - rm -rf $HOME/.gradle/caches/3.5/fileHashes/
 - rm -rf $HOME/.gradle/caches/*/plugin-resolution/
-# cache:
-#   directories:
-#   - $HOME/.gradle/caches/
-#   - $HOME/.gradle/wrapper/
-#   - $HOME/Library/Caches/Yarn/v1/
-#   - $HOME/.cache/yarn/v1/
+cache:
+  directories:
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
+  - "$HOME/.npm"
 before_install:
 - export LANG=en_US.UTF-8
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./script/travis-sdk-manager-licenses.sh ; fi
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update ; brew install yarn ios-sim
-  jq ios-deploy cocoapods ; rvm use system ; pod setup ; fi
-- nvm install 8
-# - yarn global add cordova
-install:
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./script/travis-sdk-manager-licenses.sh
+  ; fi
 - nvm install 8
 - nvm use 8
-- curl -o- -L https://yarnpkg.com/install.sh | bash
 - source ~/.bashrc
+install:
 - npm install -g xvfb-maybe
+- npm install -g npm@latest
 - npm install -g cordova
-- npm -v
 before_script:
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then ./script/travis-addkeys.sh ; fi
-script:
 - npm install
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then ./script/travis-build-ios.sh && ./script/travis-package-ios.sh ; fi
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./script/travis-build-android.sh && ./script/travis-package-android.sh ; fi
+script:
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./script/travis-build-android.sh &&
+  ./script/travis-package-android.sh ; fi
 env:
   global:
   - JAVA_HOME=/usr/lib/jvm/java-8-oracle
-  - secure: dKuZUFxkbxxbotdI9VQZdAG9GN93e6oyv+GnjqqWHe7+VKI5dx3pLetdFbOqY1lpnEjp9srPBUL4uNdWz7u72C4IfS1xlhGoRGy/lNsizviE30d9UFnqRgZtFxrkCh3ML/pN/jIe6JPUNDqXAqt7LnxSdWcstLjlOVQZ2rz7sP4YncStW99d4wh0b0ZjMONefjgRGzXVAYp2aYxTD/8Nrhvt40CiiiDdW19+FfN9TE7FnpgMXd/e2scZng5LMz8dJu5rniLMLJBP57H0mG0MrQzUnMFIGaFw0SfNZwPfRvZCEcBE+a3KUGY5rXUo0ybipc4IxzTeMzxpBHIyq4w6xgBLWSDO8/7WJhk+vMGJgAQZg1fh/tVCTp766RpAgj0sD5Gtc6qkLKYgLN3hiEsENbg2FzYupcS0vZsOGkhLbj4CfrUlElTI5maNLHMEPRkhHGBnQumtnNwNpTyXaW88wACivkG+XN3vFV7Wua/TFs7NcBhFeAUULqLEiLfuVLhOQGyqj/O69hm3eMA4QIhcpBo82WM/oMiMETvFHWgwNXho9g/V6AbBPvtcnZuZSIbbtMMyvFhwOYQfzcFCEdYMvWfMdavLh4MNjNctI4cmMjJtt60xS1geFh9MRHE1HrMDQH9K5f5TN5NDd6CdL4XYaPNdGEX7g70q4nhqILBCqdI=
-  - secure: kwLddM8E+EjTRcnPTY59Txxzf7tKXhRxRAYKOWe36n2kg/bXKlMKknMAUTFRQ5oTu4xx8K/w6p3/0kiGEJCA5x3py+Sgs5O+ictYYyqpnxJkh4aUohMfUmG5ONaSNdRJI2vJBxDMDfeP5n3LxkYcACnOcovoQsTdsBA1//OcFuZGugJ9kaWxo94g78AWKdsG3U7wbyvH2H/ZC41P5XkEph9jbUfNXgcC1b90RowoNi4E0XzspAzSqAa4gGZpWOLwijvtlz7k3EMVRLIQ51/5MeKfcaBpbHT7GlKQT7e7x5k8Kp8MosD1uHJ9enFn3vdLm0Pi5XUoejfI7RCZMJUG5AsWC6OqvDgyhW0k11C3/bRzQNHtQbtg9D8yhjPRa6uqvdGX2r7TyqFR5iPtctyUPGAx8bQ0+7sS3ZXWdwRSOxDASNk7Am3RXnWeYF3IL/qWobu8naoJCpJ2vbQ/wPPubo2Lz3gfE25BQjqlOk3HhX+ngYFOXbnbiWFoWZWCI7usOzeo0yk+6FZxyp1Dfu443kft+b2WHhAe5iXrbL19DdXCSPo1NWmpCPzyskkRPIDIS5u92rnxtEbk9BHP6aCoTXduDnITe8zjOItoEijJ1rFyO3Bopp3nJiT9soqxeUZ+jMns8R86uI2hw5sWZ25LtzC13TQtV6qExnqApHQliL0=
-  - secure: YKYMqZwH6mcTFm8SHoKwVhzOcQK8C5r7yOCJC2xSSCo4jJRrpHcRKtfu398J5gaIfjQBt1BWUfNHlNDW8+9aQrLtAlqtnCED3ZgsmxYw4q91ZJ76xHQlg/hQSbZ8efeBmTEXR07uz7nYqoF721zHtRi+hHWKA1pdN7F4ELdOPEwfXywGtfb5wrOAhP+FxcQJm+wPbDaafsZ+f7CjlK2gMqkRHUQ6lGDH6Nbo5PKWa22eOGBoD+9tO28CrJoPEmlfseal7kpxOU/L8RBcljBdlVCCCOZeMGTnYoB+drCBdFmPVwdGKkDdOadftIuVwlmhX089J/5vo6ofMgdIsVas7b+Dc5o2G77KjsVy7DgRrbiv6QCBrY4Bwfi9G7Msi+iI8Zz0eUApQRcfF9frnkEG1xA/v+4eY3EplC7YMPH6F3oLC8TVKI3DuN5M5tCskKm6rOMyFUn9YWLyf66Npt7gmZLWu4ZEuGy87VCIBZ10MMlFnAgWVv51Wjonm+IR5ATLqZGJFG6316hghisxLlzwD3TawQkJGG6H7IrIOzFsVKzIbfNXHlBzmtC4yXNi4hTgr1f6CNxE1wOcCdNOXxJ93ivR0e5lM9TpZH5MSS/QrX4j1+xJaA/eOCyiwrM9PSV4eTqW+c4S2TV/u5aLkOctVFX+WtG/ug1ZBqMC8Mfc7wU=
-  - secure: FrsIYZaQGQjFMw7c1hcpfN7ZbORbEr0igI8QpKbjRIGrwYArpyECdiaXE0bnjRBdhJ8PoloceIuXjRySE7G57dXfxeBtasTqbKKPh13oS1ubzsULxWtPsJqmdMICMv1b/87N9w0JEAZv9H26Yr/iTZ1xjbD2Ytw2s2lQu7j6FYSJF3o/31R6Magfnn26txW8SlcBqTf4XOk6uOMr125c4p2PtxdpT04EwdyDw/JyL0D+Y61vhaLm0+7Pb2KM/nHekHheKekoT1F+Zhfyoal6NtmMYvLlJ9GDbdS6FFUHcds7fWTPHEiFg2JvRq0RGrnqFBhb+Ea/+bYsulMTMUIYxo89jbX6TSdlsb2UhNnSpOovhbkWoi1jRkcw0WLePW2G0xwwjleyxdFr8b2HoNJtIkCervaXOVad7Ba8lUrXV3dvhnFlpC+pGijEXjfwiPzgl+6A2ZYEVvvYNSkA93Ptodn+R/DrCBEt16NwC0eIqRpFZBRA/4sHCLB5KkcTPQKkF1sKMNEkXEv8AvzrQcB5Ib+3urYRkDWi3dZmJrmquHP2CoOsOIglh9TDvsVdenUczxowFAwubRtP+wshOKu9xbvnks2PqiCsxz705C5WzBtgxo8tuW+nhOdqOP8VTm7J0ymqXeR0FSHoS2tAcPoY3hUQEjMt4RKkTFr32BA2OeE=
+  - secure: B79naxAh4SzkACaVDq37R7MwmKZ6gCL0xE0tVgUZVIOqnuz4BWNkynXP7jRI0PYntMcDiZNsNcamShocnb+j5ypPO4aFov+4lbSSHUZSL6YS9xK5/PI+SeJE+Nk7w8qkUZsa0jfVcO9mMbWMK9F6OHqVx83QkGLBcSvNS+tqSp1bvEVPXdbIZvYVwg7EArGtWw4+WHy11/7k5vlteBd94L90TUkQSFLMUBVVqqvI8rxUHIJPUQKvqzOUTl5XtRGJRG4JMfEy+M28KkVOn/SpYsND+UIFd9K++qDcFQhdl26DqL9stMj1dvBryGFtaNog5J303o/WlHIIfSOubqPiSGD1rCaOlAjDzsu3W90+4jENXLzJWy+hFQ67D64Pk/BkeVgswE1pf8BhUD+WRj7ZeOlUexXHJHuFlwVTcsSRiGVC0oJoGvvddWIgvVUNyjvRwJQsVt704cX27L3JkvPP3AqgLmtok6gkqD+W46hhWZA13X/SKb/0zgxqJap1CgJ5soSv18ZM4fk25J3kL8wCilh3dZ2e7P6ekNJ1OxAHyCFQyKiUgXvS6tKdb43JfZShz4BG9t8taMKU+lA+O0McC663ZLY8E7W2htu3hRBmEPuSjqoKdjeGlM5iQbvz38TrolwhaolYvyRKZd4seXHTYdeeJn3oGf5Loh8J7V3Cz4U=
+  - secure: IFyKInBHJnrONx9aTqkpXE2AE+gBzsnsyjYfulaBBx5Omt0Se215QMqF1UT0uzCLxLQiKyD8/ucFJg2TGW1COinN/uR8IHERMrul3TvdFNX0OXI/9bKVhS7MofwEyQQM8nS5a1pBYf9kMgFbhpqhihlL7txJe9sgCtlPUMRYmcFNF8aLmGg/zyAuuovdt1aZeoXmgK0J9xnRJEBoh2/9jnENqbz6yTYHaDWq/oGvPLObU48V6TW/93zlnuyNjOcGu/IhlcakQLLiAKdZQuQfXj5Qz3c+4S0/BaaBE/OdmzGn/eG0Jx0E8PnESsjkwnLR8CiTX+up+W3CO1lwLnLJFqWV+FN5R88VfMfQ0N00hl+WvJmrfYUnF6wkBpVs4Uhd+7U8UX18p7D/imyKEqiNZ/RQyXnuQMipF0OgNqhfUenkowD0QM3N1XqQSFx2Ei3mRls3LoCS4N1NTgGO1mn6bQf5te8COszgykBcXP8ump9i6wiD+T7qFMMxDLHD0EhlUn/4cKP9EGtR8RSR4rppiKiPfHX2dOruzz0nHAAme/r3bQbXMIBOpialVhuZoAF9QktiSKsm3wn+kEXM8Ftf5MlzUatK61aVbn0TKHW/tFMBgfINsUKEk1OoxHViNNHjCv9SaMUVSO4tcb3YrlXwPWHc6ZqxTJKpXJE8QXxE6TM=
+  - secure: MyRfm9hSgWlsfanp/n6erZ4Z8vdir2bhkjVN3QwftYePTFf9bkxjCW2OHOMW1LBFVIeBtXigO3A3EH3h67zww5mnS1hHSTcQJMEVzp/FBlmBmkD+b2fHPHUo2rvp6p3bGCkLrAutkaytTcy6HCX8CKmyK9xX3GITx2iL1H/nHmHUSDkRuFZa3OFzgyj92bL0MJNx19bYt7VNyWnIokxqsia/Tkm+/3gOPi+JZf6SOXNbNy3re6sRTrfvHVAInSk44AbndZHGv2FOP+CvQUzHl1zfcJ4V6rFmwiLfunSayJFWrwnrENRZ57w08UUWqKCbou45dJnA5rsvY22b9LyNvwRZ/niFmB29IZYbOgGzydiu+8j6hrI01aP05C7GYPukFpxsSfZm+EecRvtqSjBm9MTgQPPaJqHabONYEbE/ktXrPeA4TEX6KJ0NNrg050i5CtJTpfvXT1q4Qj9+YUPGy6XJaiOOvW/JihRhe0M6cTi9GAGQF/Cgw5VNr31oQTsunUNuVuqdlTFA3WToFY+kwU4bltdmtSEOCMF23YSiFSGV3XaJ2YGiK//ATpYfXqaRvQXR+0mxVZZoraE7kIMpW4aXmxG4cW/oTXgYPpSFmTLnkhCUZXiL3M9Vu/eZ7+JnjPYZuB/8OFDZB1/KSdeTnc+Fm1cHVIPlxjhFvPRLZ+Q=
+  - secure: eocZwOeEikqlQAQXf5IRNZbJ+m98QV1oZvacsvlee/q8z99pNBwGM2+5my0GtDwut0A+7XREIMi+QnVDjtsRUON4HQLPAqg84r9eONR38vEU2lnUAIeoH2WnK+mlc1jTCA2RMUBSSPErjHftXCcspTkJcdl7qwC5i5lUXDrKcShEECsooMxTv9KO6hoaeW5MSjLc90bWPNQ1JYE9NsAniiiEXJ7ZM3QfVo0t/a1wBhENhgQrCJQZ5bYdErepxXhf4m3W/utNLHzwY3UZ0sW0Wah59WkrZS+Dijc9PUDPIuWLfdaORXtFf7dfWc5kk3p2RaJhda+eVbXKn913EKcY8xganMFmTQezCEeORw1hEU2LcFKg1ZyoeEmnlZmR9YzxM45m4H6xpNZuTve2PVBCB585hJ89G44XKAI0KPJeWuzcpvX03WwmBYPHjz3GPNCQP3BLuEHPoTYS2nRXA0BRBiec0R2tjuugwAB/nKxWVHl96+EteVi3PjZCoBimSv5vgnvK9SfQzZsMWvIPDxXCot+fRpfU5mjZviapJVyaCgbwQMNkOIbeNabbrBRAdOh0w7i4d23a5V6PfJWb2X0i5vLoxfCcGVuByKPDZTvFFwAlbpllumaBpcag+8gTae/YKgA9QZ/eOGYdgQlWkakpPyszbGAxkLhRmG9Z/NWspGU=
 after_success:
-  - export SSHPASS=$DEPLOY_PASS
-  - sshpass -e scp $PWD/test.scp.txt $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
-
-# deploy:
-#   provider: releases
-#   api_key:
-#     secure: [MY_API_KEY]
-#   file_glob: true
-#   file: output/*
-#   skip_cleanup: true
-#   overwrite: true
-#   on:
-#     branch: master
-# after_success:
-#   - echo "${SFTP_KEY}" | base64 --decode >/tmp/sftp_rsa
-#   - curl --ftp-create-dirs -T filename --key /tmp/sftp_rsa sftp://${SFTP_USER}:${SFTP_PASSWORD}@doctorhandbook.com/directory/filename
+- export SSHPASS=$DEPLOY_PASS
+- sshpass -e scp $PWD/test.scp.txt $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
