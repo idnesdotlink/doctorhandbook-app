@@ -5,10 +5,11 @@
   "description": "Doctor Handbook Application.",
   "main": "index.js",
   "scripts": {
-    "dev": "",
+    "dev": "cross-env DEBUG=webpack NODE_ENV=development BABEL_ENV=buildscript node --max_old_space_size=1024 -r babel-register .compiler/dev.es6",
     "test": "echo \"Error: no test specified\" && exit 1",
     "platform:android": "./script/add-platform-android.sh",
-    "platform:ios": "./script/add-platform-ios.sh"
+    "platform:ios": "./script/add-platform-ios.sh",
+    "check:env": "cross-env"
   },
   "author": "Doctorhandbook Team",
   "license": "MIT",
