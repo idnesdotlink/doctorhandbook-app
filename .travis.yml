@@ -60,15 +60,16 @@ before_install:
 # - yarn global add cordova
 install:
 - nvm install 8
+- nvm use 8
 - curl -o- -L https://yarnpkg.com/install.sh | bash
 - source ~/.bashrc
 - npm install -g xvfb-maybe
 - npm install -g cordova
-- yarn
+- npm -v
 before_script:
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then ./script/travis-addkeys.sh ; fi
 script:
-- yarn install
+- npm install
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then ./script/travis-build-ios.sh && ./script/travis-package-ios.sh ; fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./script/travis-build-android.sh && ./script/travis-package-android.sh ; fi
 env:
