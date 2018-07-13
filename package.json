@@ -9,6 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "platform:android": "./script/add-platform-android.sh",
     "platform:ios": "./script/add-platform-ios.sh",
+    "build:android": "./script/build-android.sh",
     "check:env": "cross-env"
   },
   "author": "Doctorhandbook Team",
