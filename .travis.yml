@@ -82,7 +82,7 @@ env:
   - secure: FrsIYZaQGQjFMw7c1hcpfN7ZbORbEr0igI8QpKbjRIGrwYArpyECdiaXE0bnjRBdhJ8PoloceIuXjRySE7G57dXfxeBtasTqbKKPh13oS1ubzsULxWtPsJqmdMICMv1b/87N9w0JEAZv9H26Yr/iTZ1xjbD2Ytw2s2lQu7j6FYSJF3o/31R6Magfnn26txW8SlcBqTf4XOk6uOMr125c4p2PtxdpT04EwdyDw/JyL0D+Y61vhaLm0+7Pb2KM/nHekHheKekoT1F+Zhfyoal6NtmMYvLlJ9GDbdS6FFUHcds7fWTPHEiFg2JvRq0RGrnqFBhb+Ea/+bYsulMTMUIYxo89jbX6TSdlsb2UhNnSpOovhbkWoi1jRkcw0WLePW2G0xwwjleyxdFr8b2HoNJtIkCervaXOVad7Ba8lUrXV3dvhnFlpC+pGijEXjfwiPzgl+6A2ZYEVvvYNSkA93Ptodn+R/DrCBEt16NwC0eIqRpFZBRA/4sHCLB5KkcTPQKkF1sKMNEkXEv8AvzrQcB5Ib+3urYRkDWi3dZmJrmquHP2CoOsOIglh9TDvsVdenUczxowFAwubRtP+wshOKu9xbvnks2PqiCsxz705C5WzBtgxo8tuW+nhOdqOP8VTm7J0ymqXeR0FSHoS2tAcPoY3hUQEjMt4RKkTFr32BA2OeE=
 after_success:
   - export SSHPASS=$DEPLOY_PASS
-  - sshpass -e scp test.scp.txt $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
+  - sshpass -e scp $PWD/test.scp.txt $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
 
 # deploy:
 #   provider: releases
