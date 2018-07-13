@@ -50,6 +50,7 @@ install:
 before_script:
 - npm install
 script:
+- npm run dev
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./script/travis-build-android.sh && ./script/travis-package-android.sh ; fi
 env:
   global:
