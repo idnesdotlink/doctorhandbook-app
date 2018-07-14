@@ -1,7 +1,7 @@
 import rules from  '../rules/cordovaRules.es6'
 import { EntryJsPath, OutputPath } from '../../constant.es6'
 import htmlWebpackPlugin from '../plugins/htmlWebpackPlugin'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import miniCssExtractPlugin from '../plugins/miniCssExtractPlugin'
 import { VueLoaderPlugin } from 'vue-loader'
 import extension from '../extensions'
 const config = {
@@ -23,9 +23,7 @@ const config = {
   },
   plugins: [
     new VueLoaderPlugin(),
-    new MiniCssExtractPlugin({
-      filename: 'minify.css'
-    }),
+    miniCssExtractPlugin,
     htmlWebpackPlugin
   ]
 }
