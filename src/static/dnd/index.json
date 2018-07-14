@@ -1,0 +1,538 @@
+[
+    {
+        "id": "0134",
+        "title": "zinc sulfate"
+    },
+    {
+        "id": "0133",
+        "title": "zidovudine/lamivudine/nevirapine = azt/3tc/nvp"
+    },
+    {
+        "id": "0132",
+        "title": "zidovudine/lamivudine = azt/3tc"
+    },
+    {
+        "id": "0131",
+        "title": "zidovudine = azt = zdv"
+    },
+    {
+        "id": "0130",
+        "title": "valproic acid = sodium valproate"
+    },
+    {
+        "id": "0129",
+        "title": "triclabendazole"
+    },
+    {
+        "id": "0128",
+        "title": "tranexamic acid"
+    },
+    {
+        "id": "0127",
+        "title": "tramadol"
+    },
+    {
+        "id": "0126",
+        "title": "tinidazole"
+    },
+    {
+        "id": "0125",
+        "title": "thiamine = vitamin b1"
+    },
+    {
+        "id": "0124",
+        "title": "sulfadoxine/pyrimethamine = sp"
+    },
+    {
+        "id": "0123",
+        "title": "sulfadiazine"
+    },
+    {
+        "id": "0122",
+        "title": "spironolactone"
+    },
+    {
+        "id": "0121",
+        "title": "salbutamol = albuterol nebuliser solution"
+    },
+    {
+        "id": "0120",
+        "title": "salbutamol = albuterol aerosol"
+    },
+    {
+        "id": "0119",
+        "title": "salbutamol = albuterol"
+    },
+    {
+        "id": "0118",
+        "title": "ritonavir = rtv"
+    },
+    {
+        "id": "0117",
+        "title": "risperidone"
+    },
+    {
+        "id": "0116",
+        "title": "rifampicin = r"
+    },
+    {
+        "id": "0115",
+        "title": "retinol = vitamin a"
+    },
+    {
+        "id": "0114",
+        "title": "resomal"
+    },
+    {
+        "id": "0113",
+        "title": "quinine"
+    },
+    {
+        "id": "0112",
+        "title": "pyrimethamine"
+    },
+    {
+        "id": "0111",
+        "title": "pyridoxine = vitamin b6"
+    },
+    {
+        "id": "0110",
+        "title": "pyrazinamide = z"
+    },
+    {
+        "id": "0109",
+        "title": "pyrantel"
+    },
+    {
+        "id": "0108",
+        "title": "promethazine"
+    },
+    {
+        "id": "0107",
+        "title": "prednisolone and prednisone"
+    },
+    {
+        "id": "0106",
+        "title": "praziquantel"
+    },
+    {
+        "id": "0105",
+        "title": "potassium chloride sustained-release"
+    },
+    {
+        "id": "0104",
+        "title": "potassium chloride immediate-release"
+    },
+    {
+        "id": "0103",
+        "title": "phenytoin"
+    },
+    {
+        "id": "0102",
+        "title": "phenoxymethylpenicillin = penicillin v"
+    },
+    {
+        "id": "0101",
+        "title": "phenobarbital"
+    },
+    {
+        "id": "0100",
+        "title": "paroxetine"
+    },
+    {
+        "id": "0099",
+        "title": "paracetamol = acetaminophen"
+    },
+    {
+        "id": "0098",
+        "title": "oral rehydration salts = ors"
+    },
+    {
+        "id": "0097",
+        "title": "omeprazole"
+    },
+    {
+        "id": "0096",
+        "title": "nystatin"
+    },
+    {
+        "id": "0095",
+        "title": "nitrofurantoin"
+    },
+    {
+        "id": "0094",
+        "title": "nifedipine"
+    },
+    {
+        "id": "0093",
+        "title": "nicotinamide = vitamin pp = vitamin b3"
+    },
+    {
+        "id": "0092",
+        "title": "niclosamide"
+    },
+    {
+        "id": "0091",
+        "title": "nevirapine = nvp"
+    },
+    {
+        "id": "0090",
+        "title": "multivitamin / vitamin b complex"
+    },
+    {
+        "id": "0089",
+        "title": "morphine sustained-release (msr)"
+    },
+    {
+        "id": "0088",
+        "title": "morphine immediate-release (mir)"
+    },
+    {
+        "id": "0087",
+        "title": "misoprostol"
+    },
+    {
+        "id": "0086",
+        "title": "mifepristone = ru486"
+    },
+    {
+        "id": "0085",
+        "title": "miconazole oral gel"
+    },
+    {
+        "id": "0084",
+        "title": "metronidazole"
+    },
+    {
+        "id": "0083",
+        "title": "metoclopramide"
+    },
+    {
+        "id": "0082",
+        "title": "methyldopa"
+    },
+    {
+        "id": "0081",
+        "title": "metamizole = dipyrone = noramidopyrine"
+    },
+    {
+        "id": "0080",
+        "title": "mefloquine = mq"
+    },
+    {
+        "id": "0079",
+        "title": "mebendazole"
+    },
+    {
+        "id": "0078",
+        "title": "lopinavir/ritonavir = lpv/r"
+    },
+    {
+        "id": "0077",
+        "title": "loperamide"
+    },
+    {
+        "id": "0076",
+        "title": "levonorgestrel for emergency contraception"
+    },
+    {
+        "id": "0075",
+        "title": "levonorgestrel"
+    },
+    {
+        "id": "0074",
+        "title": "levodopa/carbidopa"
+    },
+    {
+        "id": "0073",
+        "title": "lamivudine = 3tc"
+    },
+    {
+        "id": "0072",
+        "title": "lactulose"
+    },
+    {
+        "id": "0071",
+        "title": "labetalol"
+    },
+    {
+        "id": "0070",
+        "title": "ivermectin"
+    },
+    {
+        "id": "0069",
+        "title": "itraconazole"
+    },
+    {
+        "id": "0068",
+        "title": "isosorbide dinitrate"
+    },
+    {
+        "id": "0067",
+        "title": "isoniazid = h"
+    },
+    {
+        "id": "0066",
+        "title": "iodized oil"
+    },
+    {
+        "id": "0065",
+        "title": "ipratropium bromide nebuliser solution"
+    },
+    {
+        "id": "0064",
+        "title": "ibuprofen"
+    },
+    {
+        "id": "0063",
+        "title": "hyoscine butylbromide = butylscopolamine"
+    },
+    {
+        "id": "0062",
+        "title": "hydrochlorothiazide"
+    },
+    {
+        "id": "0061",
+        "title": "haloperidol"
+    },
+    {
+        "id": "0060",
+        "title": "griseofulvin"
+    },
+    {
+        "id": "0059",
+        "title": "glyceryl trinitrate = nitroglycerin = trinitrin"
+    },
+    {
+        "id": "0058",
+        "title": "glibenclamide"
+    },
+    {
+        "id": "0057",
+        "title": "furosemide"
+    },
+    {
+        "id": "0056",
+        "title": "fosfomycin trometamol"
+    },
+    {
+        "id": "0055",
+        "title": "ferrous salts/folic acid"
+    },
+    {
+        "id": "0054",
+        "title": "folic acid = vitamin b9"
+    },
+    {
+        "id": "0053",
+        "title": "fluoxetine"
+    },
+    {
+        "id": "0052",
+        "title": "flucytosine"
+    },
+    {
+        "id": "0051",
+        "title": "fluconazole"
+    },
+    {
+        "id": "0050",
+        "title": "ferrous salts"
+    },
+    {
+        "id": "0049",
+        "title": "ethinylestradiol/levonorgestrel"
+    },
+    {
+        "id": "0048",
+        "title": "ethambutol = e"
+    },
+    {
+        "id": "0047",
+        "title": "erythromycin"
+    },
+    {
+        "id": "0046",
+        "title": "ergocalciferol = vitamin d2 And colecalciferol = vitamin d3"
+    },
+    {
+        "id": "0045",
+        "title": "enalapril"
+    },
+    {
+        "id": "0044",
+        "title": "efavirenz = efv = efz"
+    },
+    {
+        "id": "0043",
+        "title": "doxycycline"
+    },
+    {
+        "id": "0042",
+        "title": "dihydroartemisinin/piperaquine = dha/ppq"
+    },
+    {
+        "id": "0041",
+        "title": "digoxin"
+    },
+    {
+        "id": "0040",
+        "title": "diethylcarbamazine"
+    },
+    {
+        "id": "0039",
+        "title": "diazepam"
+    },
+    {
+        "id": "0038",
+        "title": "desogestrel"
+    },
+    {
+        "id": "0037",
+        "title": "dapsone"
+    },
+    {
+        "id": "0036",
+        "title": "cotrimoxazole = sulfamethoxazole (smx)/trimethoprim (tmp)"
+    },
+    {
+        "id": "0035",
+        "title": "codeine"
+    },
+    {
+        "id": "0034",
+        "title": "cloxacillin"
+    },
+    {
+        "id": "0033",
+        "title": "clomipramine"
+    },
+    {
+        "id": "0032",
+        "title": "clindamycin"
+    },
+    {
+        "id": "0031",
+        "title": "ciprofloxacin"
+    },
+    {
+        "id": "0030",
+        "title": "cimetidine"
+    },
+    {
+        "id": "0029",
+        "title": "chlorpromazine"
+    },
+    {
+        "id": "0028",
+        "title": "chlorphenamine = chlorpheniramine"
+    },
+    {
+        "id": "0027",
+        "title": "chloroquine sulfate or phosphate"
+    },
+    {
+        "id": "0026",
+        "title": "chloramphenicol"
+    },
+    {
+        "id": "0025",
+        "title": "charcoal (activated)"
+    },
+    {
+        "id": "0024",
+        "title": "cefixime"
+    },
+    {
+        "id": "0023",
+        "title": "cefalexin"
+    },
+    {
+        "id": "0022",
+        "title": "carbamazepine"
+    },
+    {
+        "id": "0021",
+        "title": "calcium folinate = folinic acid"
+    },
+    {
+        "id": "0020",
+        "title": "cabergoline"
+    },
+    {
+        "id": "0019",
+        "title": "bisoprolol"
+    },
+    {
+        "id": "0018",
+        "title": "bisacodyl"
+    },
+    {
+        "id": "0017",
+        "title": "biperiden"
+    },
+    {
+        "id": "0016",
+        "title": "beclometasone aerosol"
+    },
+    {
+        "id": "0015",
+        "title": "azithromycin"
+    },
+    {
+        "id": "0014",
+        "title": "ascorbic acid = vitamin c"
+    },
+    {
+        "id": "0013",
+        "title": "artesunate + sulfadoxine/pyrimethamine = as + sp"
+    },
+    {
+        "id": "0012",
+        "title": "artesunate/amodiaquine = as/aq"
+    },
+    {
+        "id": "0011",
+        "title": "artesunate = as"
+    },
+    {
+        "id": "0010",
+        "title": "artemether/lumefantrine = coartemether = al"
+    },
+    {
+        "id": "0009",
+        "title": "amoxicillin/clavulanic acid = co-amoxiclav"
+    },
+    {
+        "id": "0008",
+        "title": "amoxicillin"
+    },
+    {
+        "id": "0007",
+        "title": "amodiaquine = aq"
+    },
+    {
+        "id": "0006",
+        "title": "amitriptyline"
+    },
+    {
+        "id": "0005",
+        "title": "aluminium hydroxide"
+    },
+    {
+        "id": "0004",
+        "title": "albendazole"
+    },
+    {
+        "id": "0003",
+        "title": "aciclovir"
+    },
+    {
+        "id": "0002",
+        "title": "acetylsalicylic acid = aspirin = asa"
+    },
+    {
+        "id": "0001",
+        "title": "abacavir = abc"
+    }
+]
