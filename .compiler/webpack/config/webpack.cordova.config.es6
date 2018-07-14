@@ -1,8 +1,10 @@
-import rules from  '../rules/cordovaRules.es6'
-import { EntryJsPath, OutputPath } from '../../constant.es6'
+import rules from  '../rules/cordovaRules'
+import { assign } from 'lodash'
+import { EntryJsPath, OutputPath } from '../../constant'
 import htmlWebpackPlugin from '../plugins/htmlWebpackPlugin'
 import miniCssExtractPlugin from '../plugins/miniCssExtractPlugin'
 import { VueLoaderPlugin } from 'vue-loader'
+import { VueMaterialAlias, BaseAlias } from '../alias'
 import extension from '../extensions'
 const config = {
   entry: EntryJsPath,
@@ -14,9 +16,7 @@ const config = {
   },
   resolve: {
     extensions: extension,
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js'
-    }
+    alias: assign({}, VueMaterialAlias, BaseAlias)
   },
   module: {
     rules: rules
