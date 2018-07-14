@@ -10,7 +10,7 @@ const config = {
   output: {
     path: OutputPath,
     filename: '[name].js',
-    publicPath: '/'
+    publicPath: ''
   },
   resolve: {
     extensions: extension,
