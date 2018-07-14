@@ -1,18 +1,23 @@
 import Dexie from 'dexie'
+import axios from 'axios'
+import { forEach } from 'lodash'
 const db = new Dexie('MyDatabase')
 
-// Declare tables, IDs and indexes
-db.version(1).stores({
-  friends: '++id, name, age'
+db.version(10).stores({
+  drugs: 'id, title'
 })
 
-const s = async function () {
-  await db.friends.add({
-    name: 'Camilla',
-    age: 25
-    // street: 'East 13:th Street'
-    // picture: await getBlob('camilla.png')
+const saveIndex = async function () {
+  let response
+  response = await axios.get('http://localhost:3000/dnd/index.json')
+  let { data } = response
+  forEach(data, async (item) => {
+    try {
+      await db.drugs.add(item)
+    } catch (e) {
+      console.log(e)
+    }
   })
 }
 
-export default s
+export default saveIndex
