@@ -50,7 +50,7 @@ install:
 before_script:
 - npm install
 script:
-- npm run dev
+- npm run build
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./script/travis-build-android.sh && ./script/travis-package-android.sh ; fi
 env:
   global:
@@ -61,4 +61,7 @@ env:
   - secure: eocZwOeEikqlQAQXf5IRNZbJ+m98QV1oZvacsvlee/q8z99pNBwGM2+5my0GtDwut0A+7XREIMi+QnVDjtsRUON4HQLPAqg84r9eONR38vEU2lnUAIeoH2WnK+mlc1jTCA2RMUBSSPErjHftXCcspTkJcdl7qwC5i5lUXDrKcShEECsooMxTv9KO6hoaeW5MSjLc90bWPNQ1JYE9NsAniiiEXJ7ZM3QfVo0t/a1wBhENhgQrCJQZ5bYdErepxXhf4m3W/utNLHzwY3UZ0sW0Wah59WkrZS+Dijc9PUDPIuWLfdaORXtFf7dfWc5kk3p2RaJhda+eVbXKn913EKcY8xganMFmTQezCEeORw1hEU2LcFKg1ZyoeEmnlZmR9YzxM45m4H6xpNZuTve2PVBCB585hJ89G44XKAI0KPJeWuzcpvX03WwmBYPHjz3GPNCQP3BLuEHPoTYS2nRXA0BRBiec0R2tjuugwAB/nKxWVHl96+EteVi3PjZCoBimSv5vgnvK9SfQzZsMWvIPDxXCot+fRpfU5mjZviapJVyaCgbwQMNkOIbeNabbrBRAdOh0w7i4d23a5V6PfJWb2X0i5vLoxfCcGVuByKPDZTvFFwAlbpllumaBpcag+8gTae/YKgA9QZ/eOGYdgQlWkakpPyszbGAxkLhRmG9Z/NWspGU=
 after_success:
 - export SSHPASS=$DEPLOY_PASS
-- sshpass -e scp -o stricthostkeychecking=no -P 22 $PWD/platforms/android/app/build/outputs/apk/debug/app-debug.apk $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
+- mkdir apk
+- mv $PWD/platforms/android/app/build/outputs/apk/debug/app-debug.apk $PWD/apk/doctorhandbook.apk
+- sshpass -e scp -o stricthostkeychecking=no -P 22 $PWD/apk/doctorhandbook.apk $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
+# - sshpass -e ssh $DEPLOY_USER@$DEPLOY_HOST $DEPLOY_PATH/deploy.sh
