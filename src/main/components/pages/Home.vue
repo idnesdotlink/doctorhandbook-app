@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import Dexie from 'dexie'
 import { SaveOptions, getTableNames } from '@database'
 
 export default {
