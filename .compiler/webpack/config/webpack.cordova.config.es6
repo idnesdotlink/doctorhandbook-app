@@ -1,6 +1,6 @@
 import rules from  '../rules/cordovaRules'
 import { assign } from 'lodash'
-import { EntryJsPath, OutputPath } from '../../constant'
+import { EntryJsPath, OutputPath, OutputPublicPath } from '../../constant'
 import htmlWebpackPlugin from '../plugins/htmlWebpackPlugin'
 import miniCssExtractPlugin from '../plugins/miniCssExtractPlugin'
 import { VueLoaderPlugin } from 'vue-loader'
@@ -12,7 +12,7 @@ const config = {
   output: {
     path: OutputPath,
     filename: '[name].js',
-    publicPath: ''
+    publicPath: OutputPublicPath
   },
   resolve: {
     extensions: extension,

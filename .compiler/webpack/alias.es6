@@ -19,6 +19,7 @@ const BaseAlias = {
   '@pages': path.join(MainPath, 'components', 'pages'),
   '@ui': path.join(MainPath, 'components', 'ui'),
   '@sections': path.join(MainPath, 'components', 'sections'),
+  '@database': path.join(MainPath, 'database'),
   '@': MainPath,
   'vue$': 'vue/dist/vue.esm.js'
 }
