@@ -4,23 +4,8 @@ import WebpackDevServer from 'webpack-dev-server'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 import config from './webpack/config/webpack.cordova.config'
 import logStats from './logStats'
-import express from 'express'
-import { StaticPath } from './constant'
-let hotMiddleware, staticServer
-
-function startStatic () {
-  return new Promise((resolve) => {
-    let app = express()
-    app.use(function(req, res, next) {
-      res.header('Access-Control-Allow-Origin', '*');
-      res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-      next()
-    })
-    app.use(express.static(StaticPath))
-    app.listen(3000, () => console.log('Example app listening on port 3000!'))
-    resolve()
-  })
-}
+import staticServer from './staticServer.es6'
+let hotMiddleware
 
 function startRenderer () {
   return new Promise((resolve) => {
@@ -68,7 +53,7 @@ function startRenderer () {
 }
 
 async function init () {
-  await startStatic()
+  await staticServer()
   await startRenderer()
 
 }
