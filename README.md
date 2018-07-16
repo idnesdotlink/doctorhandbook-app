@@ -7,7 +7,7 @@
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-green.svg?style=flat-square)](https://github.com/idnesdotlink/doctorhandbook-app)
 [![Android](https://img.shields.io/badge/platform-Android-orange.svg?style=flat-square)](https://github.com/idnesdotlink/doctorhandbook-app)
 [![Permata Harapan Cancer Center](https://img.shields.io/badge/sponsor-phcc.co.id-eb6fa5.svg?style=flat-square)](https://phcc.co.id)
-[![Build status](https://img.shields.io/travis/idnesdotlink/doctorhandbook-app/master.svg?style=flat-square)](https://travis-ci.org/idnesdotlink/doctorhandbook-app)
+[![Build status](https://img.shields.io/travis/idnesdotlink/doctorhandbook-app/master.svg?logo=travis&style=flat-square)](https://travis-ci.org/idnesdotlink/doctorhandbook-app)
 
 ## Using
 
