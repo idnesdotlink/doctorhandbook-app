@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import VueMaterial from 'vue-material'
-// import database from './database'
+import '@assets/base'
 Vue.use(VueMaterial)
 
 new Vue({

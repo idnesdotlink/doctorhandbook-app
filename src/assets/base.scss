@@ -1,0 +1,25 @@
+@import "~material-design-icons/iconfont/material-icons.css";
+@import "~typeface-roboto/index.css";
+@import "~vue-material/base/index";
+@import "theme";
+@import "./vuebar";
+
+html {
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+
+.text-select {
+  user-select: text;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}

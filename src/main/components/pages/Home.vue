@@ -1,16 +1,20 @@
 <template>
-  <div>
+  <pages>
     <p>Home</p>
     <md-button @click="getDB">test</md-button>
     <md-button @click="getDB2">test2</md-button>
-  </div>
+  </pages>
 </template>
 
 <script>
 import { SaveOptions, getTableNames } from '@database'
+import Pages from '@ui/pages'
 
 export default {
   name: 'Home',
+  components: {
+    'pages': Pages
+  },
   mounted () {
     console.log(getTableNames())
   },

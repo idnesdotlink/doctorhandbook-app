@@ -16,6 +16,7 @@ const VueMaterialAlias = {
 }
 
 const BaseAlias = {
+  '@assets': path.join(SrcPath, 'assets'),
   '@pages': path.join(MainPath, 'components', 'pages'),
   '@ui': path.join(MainPath, 'components', 'ui'),
   '@sections': path.join(MainPath, 'components', 'sections'),
