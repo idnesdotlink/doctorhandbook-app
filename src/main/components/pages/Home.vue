@@ -1,8 +1,9 @@
 <template>
   <pages>
-    <p>Home</p>
+    <img src="../../../assets/images/drhandbook_longbox_dark.svg">
     <md-button @click="getDB">test</md-button>
     <md-button @click="getDB2">test2</md-button>
+    <md-button @click="advPage">ADV</md-button>
   </pages>
 </template>
 
@@ -16,10 +17,14 @@ export default {
     'pages': Pages
   },
   mounted () {
-    console.log(getTableNames())
+    // console.log(getTableNames())
   },
   methods: {
+    advPage () {
+      this.$router.push({ path: '/adv' })
+    },
     async getDB () {
+      console.log(getTableNames())
       /* var db = new Dexie('MyDatabase')
       db.version(1).stores({drugs: 'id, title'})
       db.open().catch(function (err) {

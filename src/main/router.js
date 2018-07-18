@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@pages/Home'
+import Adv from '@pages/Advertisement'
 
 Vue.use(Router)
 
@@ -15,6 +16,10 @@ const Base = [
   {
     path: '/',
     component: Home
+  },
+  {
+    path: '/adv',
+    component: Adv
   }
 ]
 
