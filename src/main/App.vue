@@ -7,6 +7,9 @@
     <transition>
       <div v-if="showAd">[content]</div>
     </transition>
+    <md-drawer :md-active.sync="showNav">
+      <md-button>close</md-button>
+    </md-drawer>
   </div>
 </template>
 
@@ -15,7 +18,8 @@ export default {
   name: 'App',
   data () {
     return {
-      showAd: false
+      showAd: false,
+      showNav: false
     }
   }
 }
@@ -35,10 +39,10 @@ export default {
     overflow: hidden;
   }
   .slide-fade-enter-active {
-    transition: all 3s ease;
+    transition: all 1.5s ease-in-out;
   }
   .slide-fade-leave-active {
-    transition: all 3s ease;
+    transition: all 1.5s ease-in-out;
   }
   .slide-fade-enter {
     transform: translateX(-100%);

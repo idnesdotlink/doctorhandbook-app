@@ -1,5 +1,8 @@
 <template>
   <pages>
+    <md-toolbar class="md-primary">
+      Home
+    </md-toolbar>
     <img src="../../../assets/images/drhandbook_longbox_dark.svg">
     <md-button @click="getDB">test</md-button>
     <md-button @click="getDB2">test2</md-button>
