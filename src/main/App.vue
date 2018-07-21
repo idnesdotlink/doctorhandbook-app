@@ -5,21 +5,37 @@
       <router-view/>
     </transition>
     <transition>
-      <div v-if="showAd">[content]</div>
+      <div v-if="showad">[content]</div>
     </transition>
-    <md-drawer :md-active.sync="showNav">
+    <md-drawer :md-active.sync="shownav">
       <md-button>close</md-button>
     </md-drawer>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'App',
   data () {
     return {
-      showAd: false,
-      showNav: false
+      showad: false,
+      shownav: false
+    }
+  },
+  computed: {
+    ...mapGetters([
+      'navigationopen',
+      'title'
+    ])
+  },
+  watch: {
+    navigationopen (value) {
+      this.$data.shownav = value
+    },
+    shownav (value) {
+      console.log(value)
+      this.$store.dispatch('setnavigationopen')
     }
   }
 }
