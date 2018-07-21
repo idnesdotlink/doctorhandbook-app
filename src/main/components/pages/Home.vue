@@ -1,24 +1,28 @@
 <template>
   <pages>
-    <md-toolbar class="md-primary">
-      Home <md-button @click="toggleNav">Show Nav</md-button>
-    </md-toolbar>
-    <img src="../../../assets/images/drhandbook_longbox_dark.svg">
-    <md-button @click="getDB">test</md-button>
-    <md-button @click="getDB2">test2</md-button>
-    <md-button @click="advPage">ADV</md-button>
-    <div>{{ navigationopen }}</div>
+    <page-content>
+      <md-toolbar class="md-primary">
+        <md-button @click="toggleNav">Show Nav</md-button>
+      </md-toolbar>
+      <img src="../../../assets/images/drhandbook_longbox_dark.svg">
+      <md-button @click="getDB">test</md-button>
+      <md-button @click="getDB2">test2</md-button>
+      <md-button @click="advPage">ADV</md-button>
+      <div>{{ navigationopen }}</div>
+    </page-content>
   </pages>
 </template>
 
 <script>
 import { SaveOptions, getTableNames } from '@database'
 import Pages from '@ui/pages'
+import PageContent from '@ui/page-content'
 import { mapGetters } from 'vuex'
 export default {
   name: 'Home',
   components: {
-    'pages': Pages
+    'pages': Pages,
+    'page-content': PageContent
   },
   computed: {
     ...mapGetters([

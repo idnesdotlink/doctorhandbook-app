@@ -4,7 +4,9 @@ import router from './router'
 import VueMaterial from 'vue-material'
 import store from './store'
 import '@assets/base'
+import Vuebar from 'vuebar'
 Vue.use(VueMaterial)
+Vue.use(Vuebar)
 
 new Vue({
   components: { App },
