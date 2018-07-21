@@ -1,5 +1,5 @@
 const state = {
-  navigationopen: true,
+  navigationopen: false,
   title: ''
 }
 export default state

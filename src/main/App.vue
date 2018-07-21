@@ -7,36 +7,39 @@
     <transition>
       <div v-if="showad">[content]</div>
     </transition>
-    <md-drawer :md-active.sync="shownav">
-      <md-button>close</md-button>
+    <md-drawer :md-active.sync="active">
+      <md-button @click="closeNav">close</md-button>
     </md-drawer>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 export default {
   name: 'App',
   data () {
     return {
-      showad: false,
-      shownav: false
+      showad: false
     }
   },
   computed: {
     ...mapGetters([
-      'navigationopen',
-      'title'
-    ])
-  },
-  watch: {
-    navigationopen (value) {
-      this.$data.shownav = value
-    },
-    shownav (value) {
-      console.log(value)
-      this.$store.dispatch('setnavigationopen')
+      'navigationopen'
+    ]),
+    active: {
+      get () {
+        return this.navigationopen
+      },
+      set () {
+        this.closeNav()
+      }
     }
+  },
+  methods: {
+    ...mapMutations({
+      openNav: 'NAVIGATIONOPEN',
+      closeNav: 'NAVIGATIONCLOSE'
+    })
   }
 }
 </script>
