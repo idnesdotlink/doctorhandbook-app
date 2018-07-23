@@ -1,8 +1,8 @@
 <template>
   <v-touch
+    :pan-options="{}"
     tag="div"
     class="app-container"
-    :pan-options="{}"
     @swiperight="swipeRight($event)"
     @swipeleft="swipeLeft($event)"
     @panright="panright($event)"
