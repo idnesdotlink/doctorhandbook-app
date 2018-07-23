@@ -11,7 +11,7 @@
     "platform:android": "./scripts/add-platform-android.sh",
     "platform:ios": "./scripts/add-platform-ios.sh",
     "build:android": "./scripts/build-android.sh",
-    "check:env": "cross-env"
+    "material:replace": "cross-env BABEL_ENV=buildscript node -r babel-register scripts/replacer.es6"
   },
   "author": "Doctorhandbook Team",
   "license": "MIT",

@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@pages/Home'
 import Advertisement from '@pages/Advertisement'
 import Tour from '@pages/Tour'
+import TourOne from '@pages/tour/one.vue'
 
 Vue.use(Router)
 
@@ -24,7 +25,13 @@ const Base = [
   },
   {
     path: '/tour',
-    component: Tour
+    component: Tour,
+    children: [
+      {
+        path: 'one',
+        component: TourOne
+      }
+    ]
   }
 ]
 
