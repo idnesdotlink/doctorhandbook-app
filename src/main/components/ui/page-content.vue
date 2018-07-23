@@ -8,23 +8,33 @@
       class="botbar"
       md-type="shift">
       <md-bottom-bar-item
-        id="bottom-bar-item-pages"
-        md-label="Desease And Treatment"
-        md-icon="pages"/>
-      <md-bottom-bar-item
-        id="bottom-bar-item-posts"
-        md-label="Posts"
-        md-icon="menu"/>
-      <md-bottom-bar-item
-        id="bottom-bar-item-favorites"
-        md-label="Favorites"
-        md-icon="favorite"/>
+        v-for="item in items"
+        :key="item.id"
+        :label="item.text">
+        <span>
+          {{ item.text }}
+        </span>
+      </md-bottom-bar-item>
     </md-bottom-bar>
   </div>
 </template>
 
 <script>
 export default {
+  data () {
+    return {
+      items: [
+        {
+          id: 1,
+          text: 'text 1'
+        },
+        {
+          id: 2,
+          text: 'text 2'
+        }
+      ]
+    }
+  },
   methods: {
     ds () {
       console.log('ds')
@@ -42,5 +52,13 @@ export default {
     position: absolute;
     padding: 0;
     margin: 0;
+  }
+</style>
+
+<style lang="scss">
+  .md-bottom-bar > .md-ripple {
+    justify-content: center;
+  }
+  .md-bottom-bar .md-bottom-bar-item {
   }
 </style>

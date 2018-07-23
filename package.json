@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "cross-env DEBUG=webpack NODE_ENV=development BABEL_ENV=buildscript node --max_old_space_size=1024 -r babel-register .compiler/dev.es6",
     "build": "cross-env DEBUG=webpack NODE_ENV=production BABEL_ENV=buildscript node --max_old_space_size=1024 -r babel-register .compiler/build.es6",
+    "lint": "node_modules/.bin/eslint --fix --ext .js,.vue -f node_modules/eslint-friendly-formatter src",
     "test": "echo \"Error: no test specified\" && exit 1",
     "platform:android": "./scripts/add-platform-android.sh",
     "platform:ios": "./scripts/add-platform-ios.sh",
