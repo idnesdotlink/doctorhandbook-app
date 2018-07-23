@@ -1,7 +1,7 @@
 <template>
   <app-container id="app">
     <transition
-      name="slide-fade">
+      :name="pageanimation">
       <router-view/>
     </transition>
     <transition>
@@ -32,7 +32,8 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'navigationopen'
+      'navigationopen',
+      'pageanimation'
     ]),
     active: {
       get () {
@@ -65,18 +66,32 @@ export default {
     bottom: 0;
     overflow: hidden;
   }
-  .slide-fade-enter-active {
+
+  .slide-fade-left-enter-active {
     transition: all .5s ease-in-out;
   }
-  .slide-fade-leave-active {
+  .slide-fade-left-leave-active {
     transition: all .5s ease-in-out;
   }
-  .slide-fade-enter {
+  .slide-fade-left-enter {
     transform: translateX(-100%);
+  }
+  .slide-fade-left-leave-to {
+    transform: translateX(100%);
+  }
+
+  .slide-fade-up-enter-active {
+    transition: all .5s ease-in-out;
+  }
+  .slide-fade-up-leave-active {
+    transition: all .5s ease-in-out;
+  }
+  .slide-fade-up-enter {
+    transform: translateY(-100%);
     opacity: 0;
   }
-  .slide-fade-leave-to {
-    transform: translateX(100%);
+  .slide-fade-up-leave-to {
+    transform: translateY(100%);
     opacity: 0;
   }
 </style>

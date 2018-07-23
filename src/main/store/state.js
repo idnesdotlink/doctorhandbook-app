@@ -1,5 +1,6 @@
 const state = {
   navigationopen: false,
-  title: ''
+  title: '',
+  pageanimation: null
 }
 export default state

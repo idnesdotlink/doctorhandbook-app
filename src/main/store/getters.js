@@ -4,6 +4,9 @@ const getters = {
   },
   title (state) {
     return state.title
+  },
+  pageanimation (state) {
+    return state.pageanimation
   }
 }
 export default getters

@@ -4,6 +4,7 @@ import Home from '@pages/Home'
 import Advertisement from '@pages/Advertisement'
 import Tour from '@pages/Tour'
 import TourOne from '@pages/tour/one.vue'
+import store from './store'
 
 Vue.use(Router)
 
@@ -17,11 +18,17 @@ const error404 = [
 const Base = [
   {
     path: '/',
-    component: Home
+    component: Home,
+    meta: {
+      animation: 'slide-fade-up'
+    }
   },
   {
     path: '/advertisement',
-    component: Advertisement
+    component: Advertisement,
+    meta: {
+      animation: 'slide-fade-left'
+    }
   },
   {
     path: '/tour',
@@ -35,8 +42,16 @@ const Base = [
   }
 ]
 
-const routes = new Router({
+const router = new Router({
   routes: [].concat(Base, error404)
 })
 
-export default routes
+router.beforeEach(
+  (to, from, next) => {
+    let animation = (to.meta !== undefined && to.meta.animation !== undefined) ? to.meta.animation : null
+    store.commit('SETPAGEANIMATION', animation)
+    next()
+  }
+)
+
+export default router

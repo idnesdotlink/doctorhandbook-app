@@ -10,6 +10,9 @@ const mutations = {
   },
   SETTITLE (state, title) {
     state.title = title
+  },
+  SETPAGEANIMATION (state, animation) {
+    state.pageanimation = animation
   }
 }
 
