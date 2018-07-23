@@ -7,7 +7,7 @@
 <script>
 import Pages from '@ui/pages'
 export default {
-  name: 'Advertisement',
+  name: 'Tour',
   components: {
     page: Pages
   },

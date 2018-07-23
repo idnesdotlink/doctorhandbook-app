@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@pages/Home'
-import Adv from '@pages/Advertisement'
+import Advertisement from '@pages/Advertisement'
+import Tour from '@pages/Tour'
 
 Vue.use(Router)
 
@@ -18,8 +19,12 @@ const Base = [
     component: Home
   },
   {
-    path: '/adv',
-    component: Adv
+    path: '/advertisement',
+    component: Advertisement
+  },
+  {
+    path: '/tour',
+    component: Tour
   }
 ]
 

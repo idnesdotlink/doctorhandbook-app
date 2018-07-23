@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <app-container id="app">
     <transition
       name="slide-fade">
       <router-view/>
@@ -7,16 +7,24 @@
     <transition>
       <div v-if="showad">[content]</div>
     </transition>
-    <md-drawer :md-active.sync="active">
-      <md-button @click="closeNav">close</md-button>
+    <md-drawer
+      :md-swipeable="true"
+      :md-active.sync="active">
+      <page-nav/>
     </md-drawer>
-  </div>
+  </app-container>
 </template>
 
 <script>
 import { mapGetters, mapMutations } from 'vuex'
+import PageNav from '@ui/page-nav'
+import AppContainer from '@ui/app-container'
 export default {
   name: 'App',
+  components: {
+    'page-nav': PageNav,
+    'app-container': AppContainer
+  },
   data () {
     return {
       showad: false
@@ -58,10 +66,10 @@ export default {
     overflow: hidden;
   }
   .slide-fade-enter-active {
-    transition: all 1.5s ease-in-out;
+    transition: all .5s ease-in-out;
   }
   .slide-fade-leave-active {
-    transition: all 1.5s ease-in-out;
+    transition: all .5s ease-in-out;
   }
   .slide-fade-enter {
     transform: translateX(-100%);

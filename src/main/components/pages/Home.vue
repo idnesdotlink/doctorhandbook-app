@@ -1,14 +1,21 @@
 <template>
   <pages>
     <page-content>
-      <md-toolbar class="md-primary">
-        <md-button @click="toggleNav">Show Nav</md-button>
+      <md-toolbar
+        md-elevation="0"
+        class="md-primary md-dense toolbar-40">
+        <md-button
+          class="md-icon-button"
+          @click="toggleNav">
+          <md-icon>menu</md-icon>
+        </md-button>
       </md-toolbar>
-      <img src="../../../assets/images/drhandbook_longbox_dark.svg">
-      <md-button @click="getDB">test</md-button>
-      <md-button @click="getDB2">test2</md-button>
-      <md-button @click="advPage">ADV</md-button>
-      <div>{{ navigationopen }}</div>
+      <div class="ct">
+        <md-button @click="getDB">test</md-button>
+        <md-button @click="getDB2">test2</md-button>
+        <md-button @click="advPage">ADV</md-button>
+        <div>{{ navigationopen }}</div>
+      </div>
     </page-content>
   </pages>
 </template>
@@ -38,7 +45,7 @@ export default {
       this.$store.dispatch('togglenavigation')
     },
     advPage () {
-      this.$router.push({ path: '/adv' })
+      this.$router.push({ path: '/advertisement' })
     },
     async getDB () {
       console.log(getTableNames())
@@ -67,3 +74,14 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.md-toolbar.md-dense.toolbar-40 {
+  min-height: 40px;
+  max-height: 40px;
+  width: 100vw;
+}
+.ct {
+  flex: 1;
+}
+</style>
