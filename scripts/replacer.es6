@@ -1,6 +1,7 @@
 import path from 'path'
+import Promise from 'bluebird'
 import { readdir as fsreaddir, stat as fsstat, writeFileSync } from 'fs'
-import { readFile } from '../src/renderer/helpers/files'
+import { readFile } from '../src/helpers/files'
 const readdir = Promise.promisify(fsreaddir)
 const stat = Promise.promisify(fsstat)
 const recur = async function (dir) {
