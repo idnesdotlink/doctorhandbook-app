@@ -11,7 +11,8 @@
     "platform:android": "./scripts/add-platform-android.sh",
     "platform:ios": "./scripts/add-platform-ios.sh",
     "build:android": "./scripts/build-android.sh",
-    "material:replace": "cross-env BABEL_ENV=buildscript node -r babel-register scripts/replacer.es6"
+    "material:replace": "cross-env BABEL_ENV=buildscript node -r babel-register scripts/replacer.es6",
+    "material:test": "cross-env BABEL_ENV=test jest --no-cache --config=.testConfig/vue-material.testConfig.js"
   },
   "author": "Doctorhandbook Team",
   "license": "MIT",
