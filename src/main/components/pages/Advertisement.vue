@@ -1,6 +1,7 @@
 <template>
   <page class="page-style">
     <md-button @click="back">test</md-button>
+    <md-button>clik</md-button>
   </page>
 </template>
 

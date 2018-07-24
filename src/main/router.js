@@ -19,6 +19,7 @@ const Base = [
   {
     path: '/',
     component: Home,
+    name: 'home',
     meta: {
       animation: 'slide-fade-up'
     }
@@ -26,6 +27,7 @@ const Base = [
   {
     path: '/advertisement',
     component: Advertisement,
+    name: 'advertisement',
     meta: {
       animation: 'slide-fade-left'
     }

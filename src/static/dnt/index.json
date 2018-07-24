@@ -1,0 +1,182 @@
+[
+    {
+        "id": "0001",
+        "title": "Acute Myelogenous Leukemia"
+    },
+    {
+        "id": "0002",
+        "title": "Adrenal Tumors / Pheochromocytoma"
+    },
+    {
+        "id": "0003",
+        "title": "Basal Cell Nevus Syndrome (Gorlin Syndrome)"
+    },
+    {
+        "id": "0004",
+        "title": "Biliary Cirrhosis / Bile Duct Cancer"
+    },
+    {
+        "id": "0005",
+        "title": "Bladder Cancer"
+    },
+    {
+        "id": "0006",
+        "title": "Bone Cancers"
+    },
+    {
+        "id": "0007",
+        "title": "Brain Tumors"
+    },
+    {
+        "id": "0008",
+        "title": "Breast Cancer"
+    },
+    {
+        "id": "0009",
+        "title": "Breast Cancer in Men"
+    },
+    {
+        "id": "0010",
+        "title": "Cardiac Sarcoma"
+    },
+    {
+        "id": "0011",
+        "title": "Cervical Cancer"
+    },
+    {
+        "id": "0012",
+        "title": "Chronic Lymphocytic Leukemia"
+    },
+    {
+        "id": "0013",
+        "title": "Chronic Myelogenous Leukemia"
+    },
+    {
+        "id": "0014",
+        "title": "Chronic Pain"
+    },
+    {
+        "id": "0015",
+        "title": "Cowden Syndrome"
+    },
+    {
+        "id": "0016",
+        "title": "Cutaneous T-Cell Lymphoma"
+    },
+    {
+        "id": "0017",
+        "title": "Endometrial Cancer"
+    },
+    {
+        "id": "0018",
+        "title": "Esophageal Cancer"
+    },
+    {
+        "id": "0019",
+        "title": "Generalized Exfoliative Dermatitis"
+    },
+    {
+        "id": "0020",
+        "title": "Hereditary Breast Ovarian Cancer Syndrome (BRCA1 / BRCA2)"
+    },
+    {
+        "id": "0021",
+        "title": "Hodgkins Disease"
+    },
+    {
+        "id": "0022",
+        "title": "Kidney Cancer"
+    },
+    {
+        "id": "0023",
+        "title": "Laryngeal Cancer (Cancer of the Larynx)"
+    },
+    {
+        "id": "0024",
+        "title": "Li-Fraumeni Syndrome"
+    },
+    {
+        "id": "0025",
+        "title": "Liver Tumors"
+    },
+    {
+        "id": "0026",
+        "title": "Lung Cancer"
+    },
+    {
+        "id": "0027",
+        "title": "Lymphedema Following a Mastectomy"
+    },
+    {
+        "id": "0028",
+        "title": "Melanoma"
+    },
+    {
+        "id": "0029",
+        "title": "Merkel Cell Cancer"
+    },
+    {
+        "id": "0030",
+        "title": "Multiple Myeloma"
+    },
+    {
+        "id": "0031",
+        "title": "Non-Hodgkins Lymphoma"
+    },
+    {
+        "id": "0032",
+        "title": "Oral Cancer"
+    },
+    {
+        "id": "0033",
+        "title": "Osteosarcoma"
+    },
+    {
+        "id": "0034",
+        "title": "Ovarian cancer"
+    },
+    {
+        "id": "0035",
+        "title": "Ovarian Cancer and Hereditary Nonpolyposis Colon Cancer (HNPCC)"
+    },
+    {
+        "id": "0036",
+        "title": "Pancreatic Cancer"
+    },
+    {
+        "id": "0037",
+        "title": "Peutz-Jeghers Syndrome"
+    },
+    {
+        "id": "0038",
+        "title": "Prostate Cancer"
+    },
+    {
+        "id": "0039",
+        "title": "Skin Cancer"
+    },
+    {
+        "id": "0040",
+        "title": "Squamous Cell Carcinoma"
+    },
+    {
+        "id": "0041",
+        "title": "Stomach Cancer"
+    },
+    {
+        "id": "0042",
+        "title": "Testicular Cancer"
+    },
+    {
+        "id": "0043",
+        "title": "Uterine Cancer"
+    },
+    {
+        "id": "0044",
+        "title": "Vaginal Cancer"
+    },
+    {
+        "id": "0045",
+        "title": "Vulvar Cancer"
+    }
+]

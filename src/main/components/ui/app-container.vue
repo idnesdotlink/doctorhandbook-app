@@ -1,15 +1,7 @@
 <template>
-  <v-touch
-    :pan-options="{}"
-    tag="div"
-    class="app-container"
-    @swiperight="swipeRight($event)"
-    @swipeleft="swipeLeft($event)"
-    @panright="panright($event)"
-    @panleft="panleft($event)"
-    @touchstart.native="touch($event)">
+  <div class="app-container">
     <slot/>
-  </v-touch>
+  </div>
 </template>
 
 <script>
