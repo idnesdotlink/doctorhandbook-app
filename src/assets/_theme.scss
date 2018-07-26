@@ -1,6 +1,6 @@
-@import "~vue-material/theme/engine.scss";
+@import "~vue-material/dist/theme/engine";
 @include md-register-theme("default", (
   primary: md-get-palette-color(purple, 800), // The primary color of your application
   accent: md-get-palette-color(pink, 800) // The accent or secondary color
 ));
-@import "~vue-material/theme/all.scss";
+@import "~vue-material/dist/theme/all";

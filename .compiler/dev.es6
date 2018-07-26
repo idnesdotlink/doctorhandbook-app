@@ -1,7 +1,7 @@
 import webpack from 'webpack'
 import path from 'path'
-import WebpackDevServer from 'webpack-dev-server'
-import webpackHotMiddleware from 'webpack-hot-middleware'
+import WebpackServe from 'webpack-serve'
+// import webpackHotMiddleware from 'webpack-hot-middleware'
 import config from './webpack/config/webpack.cordova.config'
 import logStats from './logStats'
 import staticServer from './staticServer.es6'
@@ -10,7 +10,7 @@ let hotMiddleware
 function startRenderer () {
   return new Promise((resolve) => {
     const compiler = webpack(config)
-    hotMiddleware = webpackHotMiddleware(compiler, {
+    /*hotMiddleware = webpackHotMiddleware(compiler, {
       log: false,
       heartbeat: 2500
     })
@@ -26,7 +26,7 @@ function startRenderer () {
           }
         )
       }
-    )
+    ) */
     compiler.hooks.done.tap(
       'done',
       stats => {
@@ -34,7 +34,7 @@ function startRenderer () {
       }
     )
 
-    const server = new WebpackDevServer(
+    /* const server = new WebpackDevServer(
       compiler,
       {
         contentBase: path.join(__dirname, '../'),
@@ -46,9 +46,10 @@ function startRenderer () {
           })
         }
       }
-    )
+    ) */
 
-    server.listen(9080)
+    // server.listen(9080)
+    WebpackServe({}, { config })
   })
 }
 

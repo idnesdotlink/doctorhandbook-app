@@ -16,7 +16,7 @@ const config = {
   },
   resolve: {
     extensions: extension,
-    alias: assign({}, VueMaterialAlias, BaseAlias)
+    alias: assign({}, BaseAlias)
   },
   module: {
     rules: rules
@@ -25,7 +25,10 @@ const config = {
     new VueLoaderPlugin(),
     miniCssExtractPlugin,
     htmlWebpackPlugin
-  ]
+  ],
+  serve: {
+    port: 9080
+  }
 }
 
 export default config

@@ -1,6 +1,6 @@
 import { SrcPath, MainPath } from '../constant'
 import path from 'path'
-
+/*
 const Ver = 'dev'
 const VueMaterialPath = path.join(SrcPath, 'vue-material', Ver)
 
@@ -13,7 +13,7 @@ const VueMaterialAlias = {
   'vue-material/theme/engine.scss': path.join(VueMaterialPath, 'theme', 'engine.scss'),
   'vue-material/theme/all.scss': path.join(VueMaterialPath, 'theme', 'all.scss'),
   'vue-material': VueMaterialPath
-}
+} */
 
 const BaseAlias = {
   '@assets': path.join(SrcPath, 'assets'),
@@ -25,4 +25,4 @@ const BaseAlias = {
   'vue$': 'vue/dist/vue.esm.js'
 }
 
-export { VueMaterialAlias, BaseAlias }
+export { BaseAlias }
