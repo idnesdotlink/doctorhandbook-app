@@ -1,12 +1,14 @@
 <template>
   <app-container id="app">
-    <transition
-      :name="pageanimation">
-      <router-view/>
-    </transition>
-    <transition>
-      <div v-if="showad">[content]</div>
-    </transition>
+    <div>
+      <transition
+        :name="pageanimation">
+        <router-view/>
+      </transition>
+      <transition>
+        <div v-if="showad">[content]</div>
+      </transition>
+    </div>
     <md-drawer
       :md-swipeable="true"
       :md-active.sync="active">

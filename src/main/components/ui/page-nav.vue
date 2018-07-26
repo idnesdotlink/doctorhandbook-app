@@ -14,9 +14,9 @@
         <md-icon>move_to_inbox</md-icon>
         <span class="md-list-item-text">Desease And Treatment</span>
       </md-list-item>
-      <md-list-item :to="{ name: 'advertisement' }">
+      <md-list-item :to="{ name: 'settings' }">
         <md-icon>move_to_inbox</md-icon>
-        <span class="md-list-item-text">Semua Artikel</span>
+        <span class="md-list-item-text">Settings</span>
       </md-list-item>
     </md-list>
   </div>

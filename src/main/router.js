@@ -4,6 +4,7 @@ import Home from '@pages/Home'
 import Advertisement from '@pages/Advertisement'
 import Tour from '@pages/Tour'
 import TourOne from '@pages/tour/one.vue'
+import Settings from '@pages/Settings'
 import store from './store'
 
 Vue.use(Router)
@@ -41,6 +42,14 @@ const Base = [
         component: TourOne
       }
     ]
+  },
+  {
+    path: '/settings',
+    component: Settings,
+    name: 'settings',
+    meta: {
+      animation: 'slide-fade-left'
+    }
   }
 ]
 

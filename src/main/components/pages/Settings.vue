@@ -1,7 +1,7 @@
 <template>
   <pages>
     <page-content>
-      [Home]
+      [Settings]
     </page-content>
   </pages>
 </template>
@@ -10,21 +10,10 @@
 import Pages from '@ui/pages'
 import PageContent from '@ui/page-content'
 export default {
-  name: 'Home',
+  name: 'Settings',
   components: {
     'pages': Pages,
     'page-content': PageContent
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.md-toolbar.md-dense.toolbar-40 {
-  min-height: 40px;
-  max-height: 40px;
-  width: 100vw;
-}
-.ct {
-  flex: 1;
-}
-</style>

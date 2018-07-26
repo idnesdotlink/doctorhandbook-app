@@ -1,25 +1,20 @@
 <template>
-  <div
-    v-bar
-    class="page-content"
-    @drag="ds">
-    <slot/>
-    <md-bottom-bar
-      class="botbar"
-      md-type="shift">
-      <md-bottom-bar-item
-        v-for="item in items"
-        :key="item.id"
-        :label="item.text">
-        <span>
-          {{ item.text }}
-        </span>
-      </md-bottom-bar-item>
-    </md-bottom-bar>
+  <div class="page-content">
+    <md-toolbar class="md-primary md-dense">
+      <md-button
+        class="md-icon-button md-dense"
+        @click="toggleNav">
+        <md-icon>menu</md-icon>
+      </md-button>
+    </md-toolbar>
+    <div class="ct">
+      <slot/>
+    </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data () {
     return {
@@ -35,9 +30,17 @@ export default {
       ]
     }
   },
+  computed: {
+    ...mapGetters([
+      'navigationopen',
+      'title'
+    ])
+  },
+  mounted () {
+  },
   methods: {
-    ds () {
-      console.log('ds')
+    toggleNav () {
+      this.$store.dispatch('togglenavigation')
     }
   }
 }
