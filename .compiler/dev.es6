@@ -1,7 +1,6 @@
 import webpack from 'webpack'
 import WebpackServe from 'webpack-serve'
 import webpackCordovaConfig from './webpack/config/webpack.cordova.config'
-import logStats from './logStats'
 import staticServer from './staticServer.es6'
 
 const startRenderer = async function () {
