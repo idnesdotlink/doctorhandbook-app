@@ -12,6 +12,7 @@
     "build:www": "cross-env DEBUG=webpack NODE_ENV=production BABEL_ENV=buildscript node --max_old_space_size=1024 -r babel-register .compiler/build.es6",
     "build:android": "node_modules/.bin/cordova build android",
     "clean:www": "shx rm -rf ./www/* && shx touch ./www/.gitkeep",
+    "clean:project": "shx rm -rf ./platforms && shx rm -rf ./plugins rm -rf ./node_modules",
     "clean:android": "node_modules/.bin/cordova clean"
   },
   "author": "Doctorhandbook Team",
