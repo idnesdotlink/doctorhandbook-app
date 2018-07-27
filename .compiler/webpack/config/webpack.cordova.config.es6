@@ -7,7 +7,9 @@ import { VueLoaderPlugin } from 'vue-loader'
 import { VueMaterialAlias, BaseAlias } from '../alias'
 import extension from '../extensions'
 const config = {
-  entry: EntryJsPath,
+  entry: {
+    main: [EntryJsPath]
+  },
   mode: 'development',
   output: {
     path: OutputPath,
@@ -25,10 +27,7 @@ const config = {
     new VueLoaderPlugin(),
     miniCssExtractPlugin,
     htmlWebpackPlugin
-  ],
-  serve: {
-    port: 9080
-  }
+  ]
 }
 
 export default config
