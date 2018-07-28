@@ -27,4 +27,4 @@
 
 ## Sponsor
 
-[![Permata Harapan Cancer Center](https://github.com/idnesdotlink/doctorhandbook-app/blob/master/artwork/logo/phcc.svg)](https://phcc.co.id)
+[![Permata Harapan Cancer Center](https://github.com/idnesdotlink/doctorhandbook-app/blob/master/artwork/phcc.svg)](https://phcc.co.id)
