@@ -6,7 +6,7 @@
 [![Android](https://img.shields.io/badge/platform-Android-orange.svg?style=flat-square)](https://github.com/idnesdotlink/doctorhandbook-app)
 [![Build status](https://img.shields.io/travis/idnesdotlink/doctorhandbook-app/master.svg?logo=travis&style=flat-square)](https://travis-ci.org/idnesdotlink/doctorhandbook-app)
 
-[![Doctor Handbook](https://github.com/idnesdotlink/doctorhandbook-app/blob/master/artwork/logo/drhandbook_longbox_dark.svg)](https://doctorhandbook.com)
+[![Doctor Handbook](https://github.com/idnesdotlink/doctorhandbook-app/blob/master/artwork/logo.svg)](https://doctorhandbook.com)
 
 ## Using
 
