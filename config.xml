@@ -30,7 +30,7 @@
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="SplashScreenSpinnerColor" value="purple" />
     <preference name="SplashScreenBackgroundColor" value="white" />
-    <preference name="ShowSplashScreenSpinner" value="true" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
     <platform name="android">
         <allow-intent href="market:*" />
         <icon density="ldpi" src="res/android/icon/drawable-ldpi-icon.png" />
