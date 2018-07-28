@@ -13,7 +13,8 @@
     "build:android": "node_modules/.bin/cordova build android",
     "clean:www": "shx rm -rf ./www/* && shx touch ./www/.gitkeep",
     "clean:project": "shx rm -rf ./platforms && shx rm -rf ./plugins rm -rf ./node_modules",
-    "clean:android": "node_modules/.bin/cordova clean"
+    "clean:android": "node_modules/.bin/cordova clean",
+    "git:checkout": "shx git checkout ."
   },
   "author": "Doctorhandbook Team",
   "license": "MIT",
