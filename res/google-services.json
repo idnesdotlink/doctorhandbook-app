@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "285864474071",
+    "firebase_url": "https://com-doctorhandbook.firebaseio.com",
+    "project_id": "com-doctorhandbook",
+    "storage_bucket": "com-doctorhandbook.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285864474071:android:2bdd370801440e3f",
+        "android_client_info": {
+          "package_name": "com.doctorhandbook.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "285864474071-dt9142duu370a17l7s6kcrlannjvbnh4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmYjOCZzCs_YYl4PXFI9JeHDiBEjZirxk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

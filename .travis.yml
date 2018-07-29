@@ -51,7 +51,7 @@ before_script:
 script:
 - npm run platform:android
 - npm run build:www
-- npm run build:android
+- npm run build:debug
 env:
   global:
   - JAVA_HOME=/usr/lib/jvm/java-8-oracle
