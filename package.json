@@ -15,6 +15,7 @@
     "build:www": "cross-env DEBUG=webpack NODE_ENV=production BABEL_ENV=buildscript node --max_old_space_size=1024 -r babel-register .compiler/build.es6",
     "build:debug": "node_modules/.bin/cordova build android --debug",
     "build:release": "cross-env ORG_GRADLE_PROJECT_cdvMinSdkVersion=22 ORG_GRADLE_PROJECT_cdvTargetSdkVersion=22 node_modules/.bin/cordova build android --release",
+    "copy": "shx cp res/google-services.json platforms/android/app",
     "build": "npm run build:debug"
   },
   "author": "Doctorhandbook Team",
