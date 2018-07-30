@@ -1,18 +1,22 @@
-import express from 'express'
+'use strict'
+
+import Promise from 'bluebird'
+import Koa from 'koa'
+import serve from 'koa-static'
 import { StaticPath } from './constant'
 
 const staticServer = function () {
-  return new Promise((resolve) => {
-    let app = express()
-    app.use(function (req, res, next) {
-      res.header('Access-Control-Allow-Origin', '*')
-      res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
-      next()
-    })
-    app.use(express.static(StaticPath))
-    app.listen(3000, () => console.log('Example app listening on port 3000!'))
-    resolve()
-  })
-}
+  const app = new Koa()
 
+  app.use(async (ctx, next) => {
+    ctx.set('Access-Control-Allow-Origin', '*')
+    ctx.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+    await next()
+  })
+
+  app.use(serve(StaticPath))
+  app.listen(3000)
+  console.log('listening on port 3000')
+  return Promise.resolve()
+}
 export default staticServer
