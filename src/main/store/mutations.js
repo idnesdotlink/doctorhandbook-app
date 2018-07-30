@@ -13,6 +13,9 @@ const mutations = {
   },
   SETPAGEANIMATION (state, animation) {
     state.pageanimation = animation
+  },
+  SETDEVICEREADY (state) {
+    state.deviceready = true
   }
 }
 

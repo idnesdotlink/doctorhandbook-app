@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Pages from '@ui/pages'
+import { Pages } from '@ui'
 export default {
   name: 'Advertisement',
   components: {

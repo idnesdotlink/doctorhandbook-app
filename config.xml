@@ -16,9 +16,6 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <preference name="android-maxSdkVersion" value="22" />
-    <preference name="android-minSdkVersion" value="22" />
-    <preference name="android-targetSdkVersion" value="22" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
@@ -29,10 +26,15 @@
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="SplashScreenSpinnerColor" value="purple" />
-    <preference name="SplashScreenBackgroundColor" value="white" />
+    <preference name="SplashScreenBackgroundColor" value="#FFFFFF" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="AppendUserAgent" value="DoctorHandbookApp" />
+    <preference name="BackgroundColor" value="#FFFFFF" />
     <preference name="ShowSplashScreenSpinner" value="false" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <preference name="android-minSdkVersion" value="22" />
+        <preference name="android-targetSdkVersion" value="22" />
         <icon density="ldpi" src="res/android/icon/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="res/android/icon/drawable-mdpi-icon.png" />
         <icon density="hdpi" src="res/android/icon/drawable-hdpi-icon.png" />
@@ -60,5 +62,10 @@
     <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
     <plugin name="cordova-plugin-statusbar" spec="2.4.2" />
     <plugin name="cordova-plugin-file-downloader" spec="0.3.2" />
+    <plugin name="phonegap-plugin-push" spec="^2.2.3">
+        <variable name="ANDROID_SUPPORT_V13_VERSION" value="27.+" />
+        <variable name="FCM_VERSION" value="11.6.2" />
+    </plugin>
+    <plugin name="cordova-plugin-local-notification" spec="^0.9.0-beta.2" />
     <engine name="android" spec="^7.1.1" />
 </widget>

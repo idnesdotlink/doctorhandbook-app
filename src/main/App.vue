@@ -1,5 +1,5 @@
 <template>
-  <app-container id="app">
+  <md-content id="app">
     <div>
       <transition
         :name="pageanimation">
@@ -14,18 +14,16 @@
       :md-active.sync="active">
       <page-nav/>
     </md-drawer>
-  </app-container>
+  </md-content>
 </template>
 
 <script>
 import { mapGetters, mapMutations } from 'vuex'
-import PageNav from '@ui/page-nav'
-import AppContainer from '@ui/app-container'
+import { PageNav } from '@ui'
 export default {
   name: 'App',
   components: {
-    'page-nav': PageNav,
-    'app-container': AppContainer
+    'page-nav': PageNav
   },
   data () {
     return {

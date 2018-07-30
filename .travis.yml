@@ -50,8 +50,9 @@ before_script:
 - npm install
 script:
 - npm run platform:android
+- npm run copy
 - npm run build:www
-- npm run build:android
+- npm run build:debug
 env:
   global:
   - JAVA_HOME=/usr/lib/jvm/java-8-oracle
