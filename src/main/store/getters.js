@@ -7,6 +7,9 @@ const getters = {
   },
   pageanimation (state) {
     return state.pageanimation
+  },
+  deviceready (state) {
+    return state.deviceready
   }
 }
 export default getters

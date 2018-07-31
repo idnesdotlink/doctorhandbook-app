@@ -16,7 +16,8 @@ module.exports = {
   ],
   globals: {
     __static: true,
-    'jest/globals': true
+    'jest/globals': true,
+    'PushNotification': true
   },
   plugins: [
     'promise',

@@ -24,7 +24,8 @@ const BaseAlias = {
   '@service': path.join(MainPath, 'service'),
   '@store': path.join(MainPath, 'store'),
   '@': MainPath,
-  'vue$': 'vue/dist/vue.esm.js'
+  'vue$': 'vue/dist/vue.esm.js',
+  'PushNotification': window.PushNotification
 }
 
 export { BaseAlias }

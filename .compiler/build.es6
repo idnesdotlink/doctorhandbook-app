@@ -1,3 +1,4 @@
+'use-strict'
 import webpack from 'webpack'
 import config from './webpack/config/webpack.cordova.config'
 

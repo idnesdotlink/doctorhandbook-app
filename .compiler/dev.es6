@@ -3,7 +3,7 @@ import WebpackServe from 'webpack-serve'
 import webpackCordovaConfig from './webpack/config/webpack.cordova.config'
 import staticServer from './staticServer.es6'
 
-const startRenderer = async function () {
+const devServer = async function () {
   let server
   const compiler = webpack(webpackCordovaConfig)
   const options = {
@@ -18,7 +18,7 @@ const startRenderer = async function () {
 const init = async function () {
   try {
     await staticServer()
-    await startRenderer()
+    await devServer()
   } catch (error) {
     console.log(error)
   }
