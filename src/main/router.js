@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@pages/Home'
+import Content from '@components/content'
 import Advertisement from '@pages/Advertisement'
 import Tour from '@pages/Tour'
 import TourOne from '@pages/tour/one.vue'
@@ -21,9 +22,24 @@ const Base = [
     path: '/',
     component: Home,
     name: 'home',
+    redirect: '/content',
     meta: {
       animation: 'slide-fade-up'
     }
+  },
+  {
+    path: '/content',
+    component: Content,
+    children: [
+      {
+        path: '',
+        name: 'content.home'
+      },
+      {
+        path: 'dnd',
+        name: 'content.dnd'
+      }
+    ]
   },
   {
     path: '/advertisement',

@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import Pages from '@ui/pages'
-import PageContent from '@ui/page-content'
+import Pages from '@components/pages'
+import PageContent from '@components/page-content'
 export default {
   name: 'Settings',
   components: {

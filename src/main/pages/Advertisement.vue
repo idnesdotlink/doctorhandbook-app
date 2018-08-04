@@ -1,13 +1,14 @@
 <template>
   <page class="page-style">
     <md-button @click="back">test</md-button>
+    <md-button>clik</md-button>
   </page>
 </template>
 
 <script>
-import Pages from '@ui/pages'
+import { Pages } from '@components'
 export default {
-  name: 'Tour',
+  name: 'Advertisement',
   components: {
     page: Pages
   },

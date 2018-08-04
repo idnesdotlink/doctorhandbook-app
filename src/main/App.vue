@@ -19,7 +19,7 @@
 
 <script>
 import { mapGetters, mapMutations } from 'vuex'
-import { PageNav } from '@ui'
+import { PageNav } from '@components'
 export default {
   name: 'App',
   components: {
