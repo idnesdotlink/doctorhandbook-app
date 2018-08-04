@@ -4,6 +4,8 @@ import Promise from 'bluebird'
 import Koa from 'koa'
 import serve from 'koa-static'
 import { StaticPath } from './constant'
+import { createServer } from 'http'
+import socketIO from 'socket.io'
 
 const staticServer = function () {
   const app = new Koa()
@@ -15,7 +17,18 @@ const staticServer = function () {
   })
 
   app.use(serve(StaticPath))
-  app.listen(3000)
+  const server = createServer(app.callback())
+  const io = socketIO(server)
+
+  io.on('connection', function (socket) {
+    console.log('connected')
+    socket.on('chat', function(msg){
+        console.log(msg)
+        io.emit('chat', msg + "222222")
+    })
+  })
+
+  server.listen(3000)
   console.log('listening on port 3000')
   return Promise.resolve()
 }
