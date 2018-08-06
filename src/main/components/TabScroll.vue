@@ -1,13 +1,16 @@
 <template>
-  <div
+  <v-touch
+    tag="div"
     class="tab-scroll"
+    @touchstart.native="touchstart($event)"
+    @touchend.native="touchend($event)"
     @scroll="scroll($event)">
     <div class="tab-scroll-content">
       <md-list>
         <slot/>
       </md-list>
     </div>
-  </div>
+  </v-touch>
 </template>
 
 <script>
@@ -22,7 +25,8 @@ export default {
   },
   data () {
     return {
-      position: 0
+      position: 0,
+      ts: 0
     }
   },
   computed: {
@@ -43,6 +47,14 @@ export default {
       this.position = newPos
       this.SETTOOLBARHEIGHT(delta)
       this.$emit(ev, { delta, absoluteDelta })
+    },
+    touchstart ($event) {
+      this.$data.ts = $event.changedTouches[0].screenX
+    },
+    touchend ($event) {
+      let ts = this.$data.ts
+      let te = $event.changedTouches[0].screenX
+      console.log(ts - te)
     }
   }
 }

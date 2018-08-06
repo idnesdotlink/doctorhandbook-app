@@ -21,7 +21,7 @@ export default {
     }
   },
   mounted () {
-    this.psg = this.create(50)
+    this.psg = this.create(20)
   },
   methods: {
     create (total) {
@@ -35,3 +35,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .md-list-item {
+    border-bottom: 1px solid #eeeeee;
+  }
+</style>

@@ -48,4 +48,7 @@ export default {
     -webkit-overflow-scrolling: touch;
     height: 100%;
   }
+  .md-list-item {
+    border-bottom: 1px solid #eeeeee;
+  }
 </style>

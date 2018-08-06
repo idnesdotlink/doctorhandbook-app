@@ -50,10 +50,10 @@ export default {
   }
 
   .slide-fade-left-enter-active {
-    transition: all .5s ease-in-out;
+    transition: all .2s ease-in-out;
   }
   .slide-fade-left-leave-active {
-    transition: all .5s ease-in-out;
+    transition: all .2s ease-in-out;
   }
   .slide-fade-left-enter {
     transform: translateX(-100%);
@@ -63,10 +63,10 @@ export default {
   }
 
     .slide-fade-right-enter-active {
-    transition: all .5s ease-in-out;
+    transition: all .2s ease-in-out;
   }
   .slide-fade-right-leave-active {
-    transition: all .5s ease-in-out;
+    transition: all .2s ease-in-out;
   }
   .slide-fade-right-enter {
     transform: translateX(100%);
