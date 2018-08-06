@@ -11,13 +11,13 @@
         class="mtt"
         @md-changed="change">
         <md-tab
-          id="taba"
+          id="tab-dnd"
           md-label="D&amp;D"/>
         <md-tab
-          id="tabb"
+          id="tab-dnt"
           md-label="D&amp;T"/>
         <md-tab
-          id="tabc"
+          id="tab-carreer"
           md-label="Carreer"/>
       </md-tabs>
     </div>

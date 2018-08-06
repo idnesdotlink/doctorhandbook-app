@@ -13,6 +13,9 @@ const getters = {
   },
   tabanimation (state) {
     return state.tabanimation
+  },
+  toolbarheight (state) {
+    return state.toolbarheight
   }
 }
 export default getters

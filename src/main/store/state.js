@@ -3,6 +3,8 @@ const state = {
   title: '',
   pageanimation: null,
   deviceready: false,
-  tabanimation: null
+  tabanimation: null,
+  toolbarheight: 48,
+  istoolbaropen: true
 }
 export default state

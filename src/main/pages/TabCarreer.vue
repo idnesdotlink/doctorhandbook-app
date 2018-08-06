@@ -1,16 +1,15 @@
 <template>
   <div
-    class="tc">
+    class="tc"
+    @scroll="scroll($event)">
     <div class="big">
-      <v-touch
-        tag="md-list"
-        @scroll="up">
+      <md-list>
         <md-list-item
           v-for="dt in psg"
           :key="dt">
           {{ dt }}
         </md-list-item>
-      </v-touch>
+      </md-list>
     </div>
   </div>
 </template>
@@ -36,8 +35,8 @@ export default {
       }
       return arr
     },
-    up () {
-      console.log('ok')
+    scroll (e) {
+      console.log(this.$el.scrollTop)
     }
   }
 }
@@ -46,6 +45,7 @@ export default {
 <style lang="scss" scoped>
   .tc {
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     height: 100%;
   }
 </style>

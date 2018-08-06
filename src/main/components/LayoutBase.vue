@@ -3,11 +3,14 @@
     tag="div"
     class="layout-base">
     <div>
-      <md-toolbar
-        class="md-primary md-dense"
-        md-elevation="0">
-        [toolbar]
-      </md-toolbar>
+      <div
+        :style="`margin-top: ${margin}px`">
+        <md-toolbar
+          class="md-primary md-dense tz"
+          md-elevation="0">
+          Doctor Handbook
+        </md-toolbar>
+      </div>
       <div class="yee">
         <transition>
           <router-view
@@ -19,22 +22,34 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'LayoutBase',
   data () {
     return {
-      top: 0
+      margin: 0
+    }
+  },
+  computed: {
+    ...mapGetters([
+      'toolbarheight'
+    ])
+  },
+  watch: {
+    toolbarheight: function (val) {
+      let oldVal = this.$data.margin
+      let newVal = val
+      let margin = oldVal + newVal
+      if (margin < -48) {
+        margin = -48
+      }
+      if (margin > 0) {
+        margin = 0
+      }
+      this.$data.margin = margin
     }
   },
   methods: {
-    swipeup (e) {
-      if (this.$data.top === 0) return
-      this.$data.top--
-    },
-    swipedown (e) {
-      if (this.$data.top === 48) return
-      this.$data.top++
-    }
   }
 }
 </script>
@@ -53,6 +68,9 @@ export default {
     position: absolute;
     display: flex;
     flex-direction: column;
+  }
+  .tz {
+    bottom: 0;
   }
   .yee {
     flex: 1;

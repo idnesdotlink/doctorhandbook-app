@@ -19,6 +19,15 @@ const mutations = {
   },
   SETTABANIMATION (state, animation) {
     state.tabanimation = animation
+  },
+  SETTOOLBARHEIGHT (state, toolbarheight) {
+    state.toolbarheight = toolbarheight
+  },
+  SETTOOLBAROPEN (state) {
+    state.istoolbaropen = true
+  },
+  SETTOOLBARCLOSE (state) {
+    state.istoolbaropen = false
   }
 }
 

@@ -16,7 +16,8 @@
     "build:debug": "node_modules/.bin/cordova build android --debug",
     "build:release": "cross-env ORG_GRADLE_PROJECT_cdvMinSdkVersion=22 ORG_GRADLE_PROJECT_cdvTargetSdkVersion=22 node_modules/.bin/cordova build android --release",
     "copy": "shx cp res/google-services.json platforms/android/app",
-    "build": "npm run build:debug"
+    "build": "npm run build:debug",
+    "install": "adb install -r platforms/android/app/build/outputs/apk/debug/app-debug.apk"
   },
   "author": "Doctorhandbook Team",
   "license": "MIT",

@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Main from '@pages/Home'
-import RTab from '@components/RTab'
-import TabA from '@pages/TabA'
-import TabB from '@pages/TabB'
-import TabC from '@pages/TabC'
+import TabBar from '@components/TabBar'
+import TabDND from '@pages/TabDND'
+import TabDNT from '@pages/TabDNT'
+import TabCarreer from '@pages/TabCarreer'
 import Settings from '@pages/Settings'
 import store from './store'
 
@@ -39,24 +39,24 @@ const Base = [
     children: [
       {
         path: '',
-        name: 'taba',
-        components: { 'tab-tab': RTab, 'tab-content': TabA },
+        name: 'tab-dnd',
+        components: { 'tab-tab': TabBar, 'tab-content': TabDND },
         meta: {
           tab: 1
         }
       },
       {
-        path: 'tab-b',
-        name: 'tabb',
-        components: { 'tab-tab': RTab, 'tab-content': TabB },
+        path: 'tab-dnt',
+        name: 'tab-dnt',
+        components: { 'tab-tab': TabBar, 'tab-content': TabDNT },
         meta: {
           tab: 2
         }
       },
       {
-        path: 'tab-c',
-        name: 'tabc',
-        components: { 'tab-tab': RTab, 'tab-content': TabC },
+        path: 'tab-carreer',
+        name: 'tab-carreer',
+        components: { 'tab-tab': TabBar, 'tab-content': TabCarreer },
         meta: {
           tab: 3
         }
