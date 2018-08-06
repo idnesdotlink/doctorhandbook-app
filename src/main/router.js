@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@pages/Home'
-import Content from '@components/content'
-import Advertisement from '@pages/Advertisement'
-import Tour from '@pages/Tour'
-import TourOne from '@pages/tour/one.vue'
+import Main from '@pages/Home'
+import RTab from '@components/RTab'
+import TabA from '@pages/TabA'
+import TabB from '@pages/TabB'
+import TabC from '@pages/TabC'
 import Settings from '@pages/Settings'
 import store from './store'
 
@@ -19,53 +19,49 @@ const error404 = [
 
 const Base = [
   {
-    path: '/',
-    component: Home,
-    name: 'home',
-    redirect: '/content',
+    path: '/settings',
+    name: 'settings',
+    components: {
+      content: Settings
+    },
     meta: {
       animation: 'slide-fade-up'
     }
   },
   {
-    path: '/content',
-    component: Content,
+    path: '/',
+    components: {
+      'content': Main
+    },
+    meta: {
+      animation: 'slide-fade-up'
+    },
     children: [
       {
         path: '',
-        name: 'content.home'
+        name: 'taba',
+        components: { 'tab-tab': RTab, 'tab-content': TabA },
+        meta: {
+          tab: 1
+        }
       },
       {
-        path: 'dnd',
-        name: 'content.dnd'
-      }
-    ]
-  },
-  {
-    path: '/advertisement',
-    component: Advertisement,
-    name: 'advertisement',
-    meta: {
-      animation: 'slide-fade-left'
-    }
-  },
-  {
-    path: '/tour',
-    component: Tour,
-    children: [
+        path: 'tab-b',
+        name: 'tabb',
+        components: { 'tab-tab': RTab, 'tab-content': TabB },
+        meta: {
+          tab: 2
+        }
+      },
       {
-        path: 'one',
-        component: TourOne
+        path: 'tab-c',
+        name: 'tabc',
+        components: { 'tab-tab': RTab, 'tab-content': TabC },
+        meta: {
+          tab: 3
+        }
       }
     ]
-  },
-  {
-    path: '/settings',
-    component: Settings,
-    name: 'settings',
-    meta: {
-      animation: 'slide-fade-left'
-    }
   }
 ]
 
@@ -77,6 +73,16 @@ router.beforeEach(
   (to, from, next) => {
     let animation = (to.meta !== undefined && to.meta.animation !== undefined) ? to.meta.animation : null
     store.commit('SETPAGEANIMATION', animation)
+    next()
+  }
+)
+
+router.beforeEach(
+  (to, from, next) => {
+    let totab = (to.meta !== undefined && to.meta.tab !== undefined) ? to.meta.tab : null
+    let fromtab = (from.meta !== undefined && from.meta.tab !== undefined) ? from.meta.tab : null
+    let tabanimation = totab > fromtab ? 'slide-fade-left' : 'slide-fade-right'
+    store.commit('SETTABANIMATION', tabanimation)
     next()
   }
 )

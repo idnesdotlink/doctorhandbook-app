@@ -1,19 +1,12 @@
 <template>
-  <pages>
-    <page-content>
-      [Settings]
-    </page-content>
-  </pages>
+  <div>
+    <div @click="$router.go(-1)">Close</div>
+    [settings]
+  </div>
 </template>
 
 <script>
-import Pages from '@components/pages'
-import PageContent from '@components/page-content'
 export default {
-  name: 'Settings',
-  components: {
-    'pages': Pages,
-    'page-content': PageContent
-  }
+  name: 'Settings'
 }
 </script>

@@ -10,6 +10,9 @@ const getters = {
   },
   deviceready (state) {
     return state.deviceready
+  },
+  tabanimation (state) {
+    return state.tabanimation
   }
 }
 export default getters

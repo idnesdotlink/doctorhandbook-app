@@ -16,6 +16,9 @@ const mutations = {
   },
   SETDEVICEREADY (state) {
     state.deviceready = true
+  },
+  SETTABANIMATION (state, animation) {
+    state.tabanimation = animation
   }
 }
 

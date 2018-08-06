@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from '@components/App.vue'
 import router from './router'
 import VueMaterial from 'vue-material'
 import store from './store'
@@ -15,10 +15,10 @@ if (window.location.protocol === 'file:') {
   document.body.appendChild(script)
 }
 
+Vue.use(CordovaService)
 Vue.use(VueTouch, {name: 'v-touch'})
 Vue.use(VueMaterial)
 Vue.use(Vuebar)
-Vue.use(CordovaService)
 
 new Vue({
   components: { App },

@@ -1,30 +1,77 @@
 <template>
-  <pages>
-    <page-content>
-      [Home]
-    </page-content>
-  </pages>
+  <div class="home">
+    <router-view name="tab-tab"/>
+    <div class="tab-content">
+      <transition :name="tabanimation">
+        <router-view
+          name="tab-content"
+          class="tab-content-c"/>
+      </transition>
+    </div>
+  </div>
 </template>
 
 <script>
-import Pages from '@components/pages'
-import PageContent from '@components/page-content'
+import { mapGetters } from 'vuex'
 export default {
   name: 'Home',
-  components: {
-    'pages': Pages,
-    'page-content': PageContent
+  computed: {
+    ...mapGetters([
+      'tabanimation'
+    ])
+  },
+  methods: {
+    change (id) {
+      this.$router.push({
+        name: id
+      })
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.md-toolbar.md-dense.toolbar-40 {
-  min-height: 40px;
-  max-height: 40px;
-  width: 100vw;
-}
-.ct {
-  flex: 1;
-}
+  .home {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  .tab-content {
+    flex: 1;
+    position: relative;
+  }
+  .tab-content-c {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .slide-fade-left-enter-active {
+    transition: all .5s ease-in-out;
+  }
+  .slide-fade-left-leave-active {
+    transition: all .5s ease-in-out;
+  }
+  .slide-fade-left-enter {
+    transform: translateX(-100%);
+  }
+  .slide-fade-left-leave-to {
+    transform: translateX(100%);
+  }
+
+    .slide-fade-right-enter-active {
+    transition: all .5s ease-in-out;
+  }
+  .slide-fade-right-leave-active {
+    transition: all .5s ease-in-out;
+  }
+  .slide-fade-right-enter {
+    transform: translateX(100%);
+  }
+  .slide-fade-right-leave-to {
+    transform: translateX(-100%);
+  }
 </style>
