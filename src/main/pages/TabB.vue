@@ -1,9 +1,7 @@
 <template>
   <v-touch
     tag="div"
-    class="tc"
-    @panup="swipeup($event)"
-    @pandown="swipedown($event)">
+    class="tc">
     <div class="big">
       <div
         v-for="dt in psg"
@@ -42,8 +40,9 @@ export default {
 
 <style lang="scss" scoped>
   .tc {
-    overflow: scroll;
+    overflow-y: scroll;
     height: 100%;
+    -webkit-overflow-scrolling: touch;
   }
   .big {
     height: 500px;

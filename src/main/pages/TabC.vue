@@ -42,8 +42,9 @@ export default {
 
 <style lang="scss" scoped>
   .tc {
-    overflow: scroll;
+    overflow-y: scroll;
     height: 100%;
+    -webkit-overflow-scrolling: touch;
   }
   .big {
     height: 500px;

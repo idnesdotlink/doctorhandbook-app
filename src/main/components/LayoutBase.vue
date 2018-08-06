@@ -1,9 +1,7 @@
 <template>
   <v-touch
     tag="div"
-    class="layout-base"
-    @panup="swipeup($event)"
-    @pandown="swipedown($event)">
+    class="layout-base">
     <div :style="`top: ${top}px; padding-top: ${top}px`">
       <md-toolbar
         class="md-primary md-dense"
@@ -26,7 +24,7 @@ export default {
   name: 'LayoutBase',
   data () {
     return {
-      top: 48
+      top: 0
     }
   },
   methods: {
