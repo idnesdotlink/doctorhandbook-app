@@ -1,15 +1,17 @@
 <template>
-  <v-touch
-    tag="div"
-    class="tc">
+  <div
+    class="tc"
+    @scroll="scroll($event)">
     <div class="big">
-      <div
-        v-for="dt in psg"
-        :key="dt">
-        {{ dt }}
-      </div>
+      <md-list>
+        <md-list-item
+          v-for="dt in psg"
+          :key="dt">
+          {{ dt }}
+        </md-list-item>
+      </md-list>
     </div>
-  </v-touch>
+  </div>
 </template>
 
 <script>
@@ -18,21 +20,23 @@ export default {
   data () {
     return {
       top: 0,
-      psg: [
-        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
-      ]
+      psg: []
     }
   },
+  mounted () {
+    this.psg = this.create(50)
+  },
   methods: {
-    swipeup (e) {
-      if (this.$data.top === 0) return
-      this.$data.top--
-      this.$el.scrollTop = this.$data.top
+    create (total) {
+      let arr = []
+      let i
+      for (i = 0; i <= total; i++) {
+        arr.push(i)
+      }
+      return arr
     },
-    swipedown (e) {
-      if (this.$data.top === 500) return
-      this.$data.top++
-      this.$el.scrollTop = this.$data.top
+    scroll (e) {
+      console.log(this.$el.scrollTop)
     }
   }
 }
@@ -42,9 +46,5 @@ export default {
   .tc {
     overflow-y: scroll;
     height: 100%;
-    -webkit-overflow-scrolling: touch;
-  }
-  .big {
-    height: 500px;
   }
 </style>

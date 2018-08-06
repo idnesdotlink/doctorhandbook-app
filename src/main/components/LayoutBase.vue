@@ -1,14 +1,13 @@
 <template>
-  <v-touch
+  <div
     tag="div"
     class="layout-base">
-    <div :style="`top: ${top}px; padding-top: ${top}px`">
+    <div>
       <md-toolbar
         class="md-primary md-dense"
         md-elevation="0">
         [toolbar]
       </md-toolbar>
-      <div :style="`position: absolute; top: ${top}px; z-index:100; background: blue;`">Hello</div>
       <div class="yee">
         <transition>
           <router-view
@@ -16,7 +15,7 @@
         </transition>
       </div>
     </div>
-  </v-touch>
+  </div>
 </template>
 
 <script>

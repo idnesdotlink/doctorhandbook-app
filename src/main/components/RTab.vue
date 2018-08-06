@@ -12,10 +12,10 @@
         @md-changed="change">
         <md-tab
           id="taba"
-          md-label="Drugs &amp; Dosages"/>
+          md-label="D&amp;D"/>
         <md-tab
           id="tabb"
-          md-label="Deseases &amp; Treatments"/>
+          md-label="D&amp;T"/>
         <md-tab
           id="tabc"
           md-label="Carreer"/>
