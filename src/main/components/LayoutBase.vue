@@ -1,17 +1,15 @@
 <template>
-  <div
-    tag="div"
-    class="layout-base">
-    <div>
+  <div class="layout-base">
+    <div class="layout-base-inner">
       <div
         :style="`margin-top: ${margin}px`">
         <md-toolbar
-          class="md-primary md-dense tz"
+          class="md-primary md-dense toolbar-top"
           md-elevation="0">
           Doctor Handbook
         </md-toolbar>
       </div>
-      <div class="yee">
+      <div class="scroll-content">
         <transition>
           <router-view
             name="content"/>
@@ -69,10 +67,10 @@ export default {
     display: flex;
     flex-direction: column;
   }
-  .tz {
+  .toolbar-top {
     bottom: 0;
   }
-  .yee {
+  .scroll-content {
     flex: 1;
   }
 </style>

@@ -5,7 +5,7 @@
       <transition :name="tabanimation">
         <router-view
           name="tab-content"
-          class="tab-content-c"/>
+          class="tab-content-scroll"/>
       </transition>
     </div>
   </div>
@@ -41,7 +41,7 @@ export default {
     flex: 1;
     position: relative;
   }
-  .tab-content-c {
+  .tab-content-scroll {
     position: absolute;
     top: 0;
     left: 0;

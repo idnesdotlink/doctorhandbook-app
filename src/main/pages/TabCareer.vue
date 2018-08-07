@@ -13,7 +13,7 @@
 <script>
 import TabScroll from '@components/TabScroll'
 export default {
-  name: 'TabDNT',
+  name: 'TabCarreer',
   components: {
     'tab-scroll': TabScroll
   },
@@ -33,7 +33,7 @@ export default {
       for (i = 1; i <= total; i++) {
         arr.push({
           id: i,
-          content: `${i}-dnt`
+          content: `${i}-career`
         })
       }
       return arr

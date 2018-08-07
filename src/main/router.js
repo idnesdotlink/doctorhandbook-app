@@ -4,7 +4,7 @@ import Main from '@pages/Home'
 import TabBar from '@components/TabBar'
 import TabDND from '@pages/TabDND'
 import TabDNT from '@pages/TabDNT'
-import TabCarreer from '@pages/TabCarreer'
+import TabCareer from '@pages/TabCareer'
 import Settings from '@pages/Settings'
 import store from './store'
 
@@ -54,9 +54,9 @@ const Base = [
         }
       },
       {
-        path: 'tab-carreer',
-        name: 'tab-carreer',
-        components: { 'tab-tab': TabBar, 'tab-content': TabCarreer },
+        path: 'tab-career',
+        name: 'tab-career',
+        components: { 'tab-tab': TabBar, 'tab-content': TabCareer },
         meta: {
           tab: 3
         }

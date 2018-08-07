@@ -1,6 +1,5 @@
 <template>
-  <v-touch
-    tag="div"
+  <div
     class="tab-scroll"
     @touchstart.native="touchstart($event)"
     @touchend.native="touchend($event)"
@@ -10,7 +9,7 @@
         <slot/>
       </md-list>
     </div>
-  </v-touch>
+  </div>
 </template>
 
 <script>
@@ -26,7 +25,8 @@ export default {
   data () {
     return {
       position: 0,
-      ts: 0
+      ts: 0,
+      itemHeight: 0
     }
   },
   computed: {
@@ -34,19 +34,33 @@ export default {
       'toolbarheight'
     ])
   },
+  watch: {
+    scrollPosition: function (v) {
+      this.position = v
+    }
+  },
+  async mounted () {
+    this.itemHeight = await this.getItemHeight()
+  },
   methods: {
     ...mapMutations([
       'SETTOOLBARHEIGHT'
     ]),
+    async getItemHeight () {
+      await this.$nextTick()
+      let firstItem = this.$children[0].$children[0].$el
+      return firstItem.clientHeight
+    },
     scroll () {
       let newPos = this.$el.scrollTop
-      let oldPos = this.position
+      let oldPos = this.scrollPosition
       let ev = (oldPos > newPos) ? 'up' : 'down'
       let delta = oldPos - newPos
       let absoluteDelta = Math.abs(delta)
       this.position = newPos
       this.SETTOOLBARHEIGHT(delta)
       this.$emit(ev, { delta, absoluteDelta })
+      this.$emit('content-scroll', this.$el.scrollTop)
     },
     touchstart ($event) {
       this.$data.ts = $event.changedTouches[0].screenX
