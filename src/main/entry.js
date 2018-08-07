@@ -7,6 +7,7 @@ import '@assets/base'
 import Vuebar from 'vuebar'
 import VueTouch from 'vue-touch'
 import CordovaService from '@service/cordova'
+import VueVirtualScroller from 'vue-virtual-scroller'
 
 if (window.location.protocol === 'file:') {
   let script = document.createElement('script')
@@ -16,6 +17,7 @@ if (window.location.protocol === 'file:') {
 }
 
 Vue.use(CordovaService)
+Vue.use(VueVirtualScroller)
 Vue.use(VueTouch, {name: 'v-touch'})
 Vue.use(VueMaterial)
 Vue.use(Vuebar)
