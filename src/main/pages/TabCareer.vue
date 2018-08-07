@@ -1,17 +1,21 @@
 <template>
-  <tab-scroll
-    :scroll-position="scrollPosition"
-    @content-scroll="scrollPosition = $event">
-    <md-list-item
-      v-for="item in items"
-      :key="item.id">
-      {{ item.content }}
-    </md-list-item>
-  </tab-scroll>
+  <virtual-scroller
+    :items="items"
+    item-height="40"
+    content-tag="md-list">
+    <template slot-scope="props">
+      <md-list-item
+        :key="props.item.key">
+        {{ props.item.content }}
+      </md-list-item>
+    </template>
+  </virtual-scroller>
 </template>
 
 <script>
-import TabScroll from '@components/TabScroll'
+import Vue from 'vue'
+import TabScroll from '@components/TabScroll2'
+Vue.component('tab-scroll', TabScroll)
 export default {
   name: 'TabCarreer',
   components: {
