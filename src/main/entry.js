@@ -8,6 +8,7 @@ import Vuebar from 'vuebar'
 import VueTouch from 'vue-touch'
 import CordovaService from '@service/cordova'
 import VueVirtualScroller from 'vue-virtual-scroller'
+import 'vue-virtual-scroller/dist/vue-virtual-scroller.css'
 
 if (window.location.protocol === 'file:') {
   let script = document.createElement('script')

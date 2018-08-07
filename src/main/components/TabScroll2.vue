@@ -1,12 +1,19 @@
 <template>
-  <div>
+  <ul
+    class="hello"
+    @scroll="psg">
     <slot/>
-  </div>
+  </ul>
 </template>
 
 <script>
 export default {
-  name: 'TabScroll'
+  name: 'TabScroll',
+  methods: {
+    psg () {
+      console.log('psg')
+    }
+  }
 }
 </script>
 
