@@ -25,6 +25,7 @@ const Base = [
       content: Settings
     },
     meta: {
+      type: 'root',
       animation: 'slide-fade-up'
     }
   },
@@ -34,6 +35,7 @@ const Base = [
       'content': Main
     },
     meta: {
+      type: 'root',
       animation: 'slide-fade-up'
     },
     children: [
@@ -42,6 +44,7 @@ const Base = [
         name: 'tab-dnd',
         components: { 'tab-tab': TabBar, 'tab-content': TabDND },
         meta: {
+          type: 'tab-child',
           tab: 1
         }
       },
@@ -50,6 +53,7 @@ const Base = [
         name: 'tab-dnt',
         components: { 'tab-tab': TabBar, 'tab-content': TabDNT },
         meta: {
+          type: 'tab-child',
           tab: 2
         }
       },
@@ -58,6 +62,7 @@ const Base = [
         name: 'tab-career',
         components: { 'tab-tab': TabBar, 'tab-content': TabCareer },
         meta: {
+          type: 'tab-child',
           tab: 3
         }
       }

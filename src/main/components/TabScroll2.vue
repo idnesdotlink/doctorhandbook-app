@@ -1,9 +1,9 @@
 <template>
-  <ul
+  <md-list
     class="hello"
     @scroll="psg">
     <slot/>
-  </ul>
+  </md-list>
 </template>
 
 <script>

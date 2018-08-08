@@ -1,18 +1,20 @@
 <template>
   <virtual-scroller
-    :buffer="20"
+    :buffer="480"
     :items="items"
-    :pool-size="250"
-    item-height="40"
-    content-tag="test-tab-scroll">
+    :pool-size="240"
+    item-height="48"
+    content-tag="test-tab-scroll"
+    emit-update
+    @update="(startIndex, endIndex) => upd">
     <template
       slot-scope="props"
       @scroll="sc">
-      <li
+      <md-list-item
         :key="props.itemKey"
-        :style="`height: 40px`">
+        :style="`height: 48px`">
         {{ props.item.content }}
-      </li>
+      </md-list-item>
     </template>
   </virtual-scroller>
 </template>
@@ -33,9 +35,14 @@ export default {
     }
   },
   async mounted () {
-    this.items = this.create(500)
+    this.items = this.create(5000)
   },
   methods: {
+    upd (s, e) {
+      console.log({
+        s, e
+      })
+    },
     sc () {
       console.log('sc')
     },

@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     <router-view name="tab-tab"/>
-    <div class="tab-content">
+    <div
+      class="tab-content">
       <transition :name="tabanimation">
         <router-view
           name="tab-content"
@@ -34,6 +35,9 @@ export default {
       this.$router.push({
         name: id
       })
+    },
+    pl () {
+      console.log('pl')
     },
     onScroll ($event) {
       let newPos = $event.target.scrollTop
