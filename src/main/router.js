@@ -78,6 +78,7 @@ router.beforeEach(
   (to, from, next) => {
     let animation = (to.meta !== undefined && to.meta.animation !== undefined) ? to.meta.animation : null
     store.commit('SETPAGEANIMATION', animation)
+    console.log(animation)
     next()
   }
 )

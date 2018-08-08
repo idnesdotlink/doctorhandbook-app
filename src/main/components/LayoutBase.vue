@@ -7,10 +7,17 @@
           class="md-primary md-dense toolbar-top"
           md-elevation="0">
           Doctor Handbook
+          <div class="md-toolbar-section-end">
+            <md-button
+              class="md-icon-button"
+              @click="clickSearch">
+              <md-icon>search</md-icon>
+            </md-button>
+          </div>
         </md-toolbar>
       </div>
       <div class="scroll-content">
-        <transition>
+        <transition :name="pageanimation">
           <router-view
             name="content"/>
         </transition>
@@ -30,6 +37,7 @@ export default {
   },
   computed: {
     ...mapGetters([
+      'pageanimation',
       'toolbarheight'
     ])
   },
@@ -48,6 +56,9 @@ export default {
     }
   },
   methods: {
+    clickSearch () {
+      console.log('search')
+    }
   }
 }
 </script>
@@ -72,5 +83,18 @@ export default {
   }
   .scroll-content {
     flex: 1;
+  }
+
+  .slide-fade-up-enter-active {
+    transition: all 1s ease-in-out;
+  }
+  .slide-fade-up-leave-active {
+    transition: all 1s ease-in-out;
+  }
+  .slide-fade-up-enter {
+    transform: translateY(-100%);
+  }
+  .slide-fade-up-leave-to {
+    transform: translateY(100%);
   }
 </style>

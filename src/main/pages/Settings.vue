@@ -6,6 +6,7 @@
     </div>
     <md-button @click="createStorage">create storage</md-button>
     <md-button @click="clearStorage">clear storage</md-button>
+    <md-button @click="getFile">get file</md-button>
   </div>
 </template>
 
@@ -18,6 +19,9 @@ export default {
     }
   },
   methods: {
+    getFile () {
+      this.$db.getTest()
+    },
     async createStorage () {
       let estimate
       try {

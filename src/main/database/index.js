@@ -1,5 +1,6 @@
 import Dexie from 'dexie'
 import DbStores from '@database/stores'
+import axios from 'axios'
 import { initStoragePersistence, showEstimatedQuota } from '@database/helper'
 
 const DbName = 'com.doctorhandbook.app'
@@ -30,6 +31,10 @@ const database = {
     })
     Vue.prototype.$db = {
       db,
+      async getTest () {
+        let gt = await axios.get('http://localhost:3000/drugs.json')
+        console.log(gt)
+      },
       clearDB () {
         try {
           window.indexedDB.deleteDatabase('__dbnames')
