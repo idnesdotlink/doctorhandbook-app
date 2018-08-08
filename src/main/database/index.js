@@ -1,5 +1,6 @@
 import Dexie from 'dexie'
 import DbStores from '@database/stores'
+import { initStoragePersistence, showEstimatedQuota } from '@database/helper'
 
 const DbName = 'com.doctorhandbook.app'
 const DbVersion = 1
@@ -38,6 +39,8 @@ const database = {
           console.log(error)
         }
       },
+      initStoragePersistence,
+      showEstimatedQuota,
       info () {
       }
     }
