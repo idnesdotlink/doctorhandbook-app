@@ -13,7 +13,7 @@
       <md-list-item
         :key="props.itemKey"
         :style="`height: 48px`">
-        {{ props.item.content }}
+        {{ props.item.id }} {{ props.item.title }}
       </md-list-item>
     </template>
   </virtual-scroller>
@@ -35,7 +35,10 @@ export default {
     }
   },
   async mounted () {
-    this.items = this.create(5000)
+    // this.items = this.create(5000)
+    let a = await this.$db.db.drugs.toArray()
+    console.log(a)
+    this.items = a
   },
   methods: {
     upd (s, e) {
