@@ -31,7 +31,9 @@ const database = {
       db,
       clearDB () {
         try {
-          db.delete()
+          window.indexedDB.deleteDatabase('__dbnames')
+          window.indexedDB.deleteDatabase(DbName)
+          db.close()
         } catch (error) {
           console.log(error)
         }
