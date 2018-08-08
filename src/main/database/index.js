@@ -1,78 +1,45 @@
 import Dexie from 'dexie'
-// import { map } from 'lodash'
-// import axios from 'axios'
-// import { forEach } from 'lodash'
+import DbStores from '@database/stores'
 
 const DbName = 'com.doctorhandbook.app'
 const DbVersion = 1
-const DbStores = {
-  drugs: 'id, title',
-  deseases: 'id, title',
-  options: 'id, title, content'
-}
-let dexie
-dexie = new Dexie(DbName)
-dexie.version(DbVersion).stores(DbStores)
 
-const SaveOptions = async function (title, content) {
-  console.log('test')
+let _dexie
+
+const createDexie = async function () {
+  _dexie = new Dexie(DbName)
+  _dexie.version(DbVersion).stores(DbStores)
   let db
   try {
-    db = await dexie.open()
-    await db.options.add({ id: 1, title: title, content: content })
-    db.options.count()
-    db.close()
+    db = await _dexie.open()
   } catch (error) {
     console.log(error)
   }
+  return db
 }
 
-const SaveOptionsBulk = async function () {
-  console.log('test')
-  let db = await dexie.open()
-  await db.options.add({ id: 1, title: 'Name', content: 'Doctor Handbook' })
-  db.options.count()
-  db.close()
-}
-
-const Confirm = function () {
-
-}
-
-const VersionChange = function () {
-  if (Confirm()) {
-    // Refresh current webapp so that it starts working with newer DB schema.
-    window.location.reload()
-  } else {
-    // Will let user finish its work in this window and
-    // block the other window from upgrading.
-    return false
+const database = {
+  async install (Vue) {
+    let db = await createDexie()
+    db.on('ready', function callback () {
+      console.log('ready')
+    })
+    db.on('populate', function callback () {
+      console.log('populate')
+    })
+    Vue.prototype.$db = {
+      db,
+      clearDB () {
+        try {
+          db.delete()
+        } catch (error) {
+          console.log(error)
+        }
+      },
+      info () {
+      }
+    }
   }
 }
 
-const getTableNames = function () {
-  /* return map(dexie.tables, table => {
-    return table.name
-  }) */
-}
-
-dexie.on('versionchange', VersionChange)
-
-/* const saveIndex = async function () {
-  let response
-  response = await axios.get('http://localhost:3000/dnd/index.json')
-  let { data } = response
-  forEach(data, async (item) => {
-    try {
-      await db.drugs.add(item)
-    } catch (e) {
-      console.log(e)
-    }
-  })
-} */
-
-export {
-  SaveOptions,
-  SaveOptionsBulk,
-  getTableNames
-}
+export default database

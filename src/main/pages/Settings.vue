@@ -12,9 +12,8 @@ export default {
   methods: {
     createStorage () {
     },
-    clearStorage () {
-      console.log('clear storage')
-      window.indexedDB.deleteDatabase('com.doctorhandbook.app')
+    async clearStorage () {
+      this.$db.clearDB()
     }
   }
 }
