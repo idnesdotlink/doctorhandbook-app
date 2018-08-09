@@ -11,3 +11,12 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  #App {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+  }
+</style>

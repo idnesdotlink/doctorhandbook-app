@@ -48,14 +48,17 @@ export default {
         let style = {
           'margin-top': `${this.margin}px`
         }
-        if (this.changing) style.transition = 'all .5s ease'
+        if (this.changing) {
+          style.transition = 'margin .5s ease'
+        } else {
+          style.transition = false
+        }
         return style
       }
     }
   },
   watch: {
     toolbarheight: function (val) {
-      this.changeFunc()
       let oldVal = this.$data.margin
       let newVal = val
       let margin = oldVal + newVal
@@ -66,9 +69,7 @@ export default {
         margin = 0
       }
       this.$data.margin = margin
-    },
-    changing: function (val) {
-      if (val) this.changing = false
+      this.changeFunc()
     }
   },
   methods: {
@@ -85,6 +86,8 @@ export default {
       } else if (this.margin > -24) {
         this.changing = true
         this.$data.margin = 0
+      } else {
+        this.changing = false
       }
     }, 1000)
   }
@@ -92,17 +95,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .layout-base {
+  .layout-base-inner {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    position: absolute;
-  }
-  .layout-base > div {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    position: absolute;
     display: flex;
     flex-direction: column;
   }
