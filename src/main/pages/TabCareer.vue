@@ -4,12 +4,9 @@
     :items="items"
     :pool-size="240"
     item-height="48"
-    content-tag="test-tab-scroll"
-    emit-update
-    @update="(startIndex, endIndex) => upd">
+    content-tag="md-list">
     <template
-      slot-scope="props"
-      @scroll="sc">
+      slot-scope="props">
       <md-list-item
         :key="props.itemKey"
         :style="`height: 48px`">
@@ -20,45 +17,20 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import TabScroll from '@components/TabScroll2'
-Vue.component('test-tab-scroll', TabScroll)
 export default {
   name: 'TabCarreer',
-  components: {
-    'tab-scroll': TabScroll
-  },
   data () {
     return {
-      items: [],
-      scrollPosition: 0
+      items: []
     }
   },
   async mounted () {
-    // this.items = this.create(5000)
-    let a = await this.$db.db.drugs.toArray()
-    console.log(a)
-    this.items = a
-  },
-  methods: {
-    upd (s, e) {
-      console.log({
-        s, e
-      })
-    },
-    sc () {
-      console.log('sc')
-    },
-    create (total) {
-      let arr = []
-      let i
-      for (i = 1; i <= total; i++) {
-        arr.push({
-          id: i,
-          content: `${i}-career`
-        })
-      }
-      return arr
+    try {
+      let db = await this.$_db.open()
+      this.items = await db.drugs.toArray()
+      db.close()
+    } catch (error) {
+      console.log(error)
     }
   }
 }

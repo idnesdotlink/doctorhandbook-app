@@ -20,20 +20,20 @@ export default {
   },
   methods: {
     getFile () {
-      this.$db.getTest()
+      /* this.$db.getTest() */
     },
     async createStorage () {
-      let estimate
+      /* let estimate
       try {
         estimate = await this.$db.showEstimatedQuota()
         let { usage, quota } = estimate
         this.$data.percentage = (usage / quota).toFixed(2)
       } catch (error) {
         console.log(error)
-      }
+      } */
     },
     async clearStorage () {
-      this.$db.clearDB()
+      /* this.$db.clearDB() */
     }
   }
 }

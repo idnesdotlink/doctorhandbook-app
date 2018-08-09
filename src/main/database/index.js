@@ -1,11 +1,11 @@
 import Dexie from 'dexie'
-import DbStores from '@database/stores'
 import axios from 'axios'
+import DbStores from '@database/stores'
 import { forEach } from 'lodash'
-import { initStoragePersistence, showEstimatedQuota } from '@database/helper'
-
 const DbName = 'com.doctorhandbook.app'
 const DbVersion = 1
+/*
+import { initStoragePersistence, showEstimatedQuota } from '@database/helper'
 
 let _dexie
 
@@ -19,13 +19,38 @@ const createDexie = async function () {
     console.log(error)
   }
   return db
+} */
+const install = function (Vue) {
+  const _dexie = new Dexie(DbName)
+  _dexie.version(DbVersion).stores(DbStores)
+  _dexie.on('ready', async function () {
+    let exists = await _dexie.drugs.count()
+    if (exists) return
+    let drugs
+    drugs = await axios.get('http://localhost:3000/drugs.json')
+    let items = []
+    let counter = 1
+    forEach(drugs.data.mims, async item => {
+      items.push({
+        id: counter++,
+        title: item.name
+      })
+    })
+    await _dexie.drugs.bulkAdd(items)
+  })
+  Vue.mixin({
+    beforeCreate () {
+      this.$_db = _dexie
+    }
+  })
 }
-
 const database = {
-  async install (Vue) {
+  install
+  /* async install (Vue) {
     let db = await createDexie()
     db.on('ready', async function callback () {
-      console.log('op')
+      let count = await db.drugs.count()
+      if (count > 0) return
       let t
       t = await axios.get('http://localhost:3000/drugs.json')
       let x = []
@@ -35,30 +60,21 @@ const database = {
           id: s++,
           title: i.name
         })
-        // await db.drugs.add({ title: i.name })
       })
       console.log(x)
       await db.drugs.bulkAdd(x)
-      // await db.drugs.add({ title: 'ok' })
     })
-    db.on('populate', async function callback () {
-      console.log('op')
-      let t
-      t = await axios.get('http://localhost:3000/drugs.json')
-      forEach(t.data.mims, async i => {
-        await db.drugs.add({ title: i.name })
-      })
+
+    Vue.mixin({
+      beforeCreate () {
+        this.$db = {
+          db
+        }
+      }
     })
+
     Vue.prototype.$db = {
       db,
-      async getTest () {
-        let gt = await axios.get('http://localhost:3000/drugs.json')
-        // console.log(gt.data.mims)
-        /* forEach(gt.data.mims, i => {
-          console.log(i.name)
-        }) */
-        return gt.data.mims
-      },
       clearDB () {
         try {
           window.indexedDB.deleteDatabase('__dbnames')
@@ -73,7 +89,7 @@ const database = {
       info () {
       }
     }
-  }
+  } */
 }
 
 export default database
