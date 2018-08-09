@@ -87,7 +87,7 @@ router.beforeEach(
   (to, from, next) => {
     let totab = (to.meta !== undefined && to.meta.tab !== undefined) ? to.meta.tab : null
     let fromtab = (from.meta !== undefined && from.meta.tab !== undefined) ? from.meta.tab : null
-    let tabanimation = totab > fromtab ? 'slide-fade-left' : 'slide-fade-right'
+    let tabanimation = totab > fromtab ? 'slide-left' : 'slide-right'
     store.commit('SETTABANIMATION', tabanimation)
     next()
   }

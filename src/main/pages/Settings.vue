@@ -1,5 +1,9 @@
 <template>
   <div>
+    <md-toolbar
+      class="md-dense">
+      toolbar
+    </md-toolbar>
     <div @click="$router.go(-1)">Close</div>
     <div>
       percentage: {{ percentage }}

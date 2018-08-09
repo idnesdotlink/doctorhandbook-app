@@ -9,8 +9,9 @@
       slot-scope="props">
       <md-list-item
         :key="props.itemKey"
-        :style="`height: 48px`">
-        {{ props.item.id }} {{ props.item.title }}
+        :style="`height: 48px`"
+        @click="click(props.item.title)">
+        {{ props.item.title }}
       </md-list-item>
     </template>
   </virtual-scroller>
@@ -37,6 +38,11 @@ export default {
       db.close()
     } catch (error) {
       console.log(error)
+    }
+  },
+  methods: {
+    click (e) {
+      console.log(e)
     }
   }
 }

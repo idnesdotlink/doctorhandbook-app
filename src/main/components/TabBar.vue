@@ -8,16 +8,17 @@
       </md-button>
     </div>
     <div class="tab-bar-tabs">
-      <md-tabs
-        :md-active-tab="MdActive"
-        class="mtt"
-        @md-changed="change">
-        <md-tab
-          v-for="tab in tabs"
-          :key="tab.id"
-          :id="tab.id"
-          :md-label="tab.label"/>
-      </md-tabs>
+      <div class="tab-scroller">
+        <md-tabs
+          :md-active-tab="MdActive"
+          @md-changed="change">
+          <md-tab
+            v-for="tab in tabs"
+            :key="tab.id"
+            :id="tab.id"
+            :md-label="tab.label"/>
+        </md-tabs>
+      </div>
     </div>
   </div>
 </template>
@@ -32,12 +33,12 @@ export default {
       tabs: [
         {
           id: 'tab-dnd',
-          label: 'D&D',
+          label: 'Drug & Dosage',
           scroll: 0
         },
         {
           id: 'tab-dnt',
-          label: 'D&T',
+          label: 'Desease & Treatment',
           scroll: 0
         },
         {
@@ -79,9 +80,9 @@ export default {
   justify-content: center;
 }
 .tab-bar-tabs {
-
+  flex: 1;
 }
-.mtt {
-
+.tab-scroller {
+  overflow-x: scroll;
 }
 </style>

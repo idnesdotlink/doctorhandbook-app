@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="tab-container">
     <router-view name="tab-tab"/>
     <div
       class="tab-content">
@@ -42,22 +42,16 @@ export default {
     onScroll ($event) {
       let newPos = $event.target.scrollTop
       let oldPos = this.scrollPosition
-      let ev = (oldPos > newPos) ? 'up' : 'down'
+      // let ev = (oldPos > newPos) ? 'up' : 'down'
       this.scrollPosition = newPos
-      console.log(ev)
-      /* let delta = oldPos - newPos
-      let absoluteDelta = Math.abs(delta)
-      this.position = newPos
-      this.SETTOOLBARHEIGHT(delta)
-      this.$emit(ev, { delta, absoluteDelta })
-      this.$emit('content-scroll', this.$el.scrollTop) */
+      this.SETTOOLBARHEIGHT(oldPos - newPos)
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  .home {
+  .tab-container {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -75,29 +69,29 @@ export default {
     bottom: 0;
   }
 
-  .slide-fade-left-enter-active {
-    transition: all .5s ease-in-out;
+  .slide-left-enter-active {
+    transition: all .5s ease;
   }
-  .slide-fade-left-leave-active {
-    transition: all .5s ease-in-out;
+  .slide-left-leave-active {
+    transition: all .5s ease;
   }
-  .slide-fade-left-enter {
+  .slide-left-enter {
     transform: translateX(-100%);
   }
-  .slide-fade-left-leave-to {
+  .slide-left-leave-to {
     transform: translateX(100%);
   }
 
-    .slide-fade-right-enter-active {
-    transition: all .5s ease-in-out;
+  .slide-right-enter-active {
+    transition: all .5s ease;
   }
-  .slide-fade-right-leave-active {
-    transition: all .5s ease-in-out;
+  .slide-right-leave-active {
+    transition: all .5s ease;
   }
-  .slide-fade-right-enter {
+  .slide-right-enter {
     transform: translateX(100%);
   }
-  .slide-fade-right-leave-to {
+  .slide-right-leave-to {
     transform: translateX(-100%);
   }
 </style>

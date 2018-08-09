@@ -2,7 +2,7 @@
   <div class="layout-base">
     <div class="layout-base-inner">
       <div
-        :style="`margin-top: ${margin}px`">
+        :style="style">
         <md-toolbar
           class="md-primary md-dense toolbar-top"
           md-elevation="0">
@@ -17,9 +17,11 @@
         </md-toolbar>
       </div>
       <div class="scroll-content">
-        <transition :name="pageanimation">
+        <transition
+          :name="pageanimation">
           <router-view
-            name="content"/>
+            name="content"
+            class="router-content"/>
         </transition>
       </div>
     </div>
@@ -28,6 +30,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import { debounce } from 'lodash'
 export default {
   name: 'LayoutBase',
   data () {
@@ -39,10 +42,20 @@ export default {
     ...mapGetters([
       'pageanimation',
       'toolbarheight'
-    ])
+    ]),
+    style: {
+      get: function () {
+        let style = {
+          'margin-top': `${this.margin}px`
+        }
+        if (this.changing) style.transition = 'all .5s ease'
+        return style
+      }
+    }
   },
   watch: {
     toolbarheight: function (val) {
+      this.changeFunc()
       let oldVal = this.$data.margin
       let newVal = val
       let margin = oldVal + newVal
@@ -53,12 +66,27 @@ export default {
         margin = 0
       }
       this.$data.margin = margin
+    },
+    changing: function (val) {
+      if (val) this.changing = false
     }
   },
   methods: {
     clickSearch () {
       console.log('search')
-    }
+    },
+    deactivate () {
+      console.log('deactivate')
+    },
+    changeFunc: debounce(function () {
+      if (this.margin < -24) {
+        this.changing = true
+        this.$data.margin = -48
+      } else if (this.margin > -24) {
+        this.changing = true
+        this.$data.margin = 0
+      }
+    }, 1000)
   }
 }
 </script>
@@ -83,6 +111,14 @@ export default {
   }
   .scroll-content {
     flex: 1;
+    position: relative;
+  }
+  .router-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 
   .slide-fade-up-enter-active {
@@ -92,9 +128,9 @@ export default {
     transition: all 1s ease-in-out;
   }
   .slide-fade-up-enter {
-    transform: translateY(-100%);
+    transform: translateY(100%);
   }
   .slide-fade-up-leave-to {
-    transform: translateY(100%);
+    transform: translateY(-100%);
   }
 </style>
