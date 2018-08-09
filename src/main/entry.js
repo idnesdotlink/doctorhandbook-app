@@ -10,6 +10,7 @@ import CordovaService from '@service/cordova'
 import Database from '@database'
 import VueVirtualScroller from 'vue-virtual-scroller'
 import 'vue-virtual-scroller/dist/vue-virtual-scroller.css'
+import 'typeface-roboto'
 
 if (window.location.protocol === 'file:') {
   let script = document.createElement('script')

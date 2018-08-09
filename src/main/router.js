@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Main from '@pages/Home'
+import TabContainer from '@components/TabContainer'
 import TabBar from '@components/TabBar'
 import TabDND from '@pages/TabDND'
 import TabDNT from '@pages/TabDNT'
@@ -32,7 +32,7 @@ const Base = [
   {
     path: '/',
     components: {
-      'content': Main
+      'content': TabContainer
     },
     meta: {
       type: 'root',
