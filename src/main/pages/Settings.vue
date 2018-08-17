@@ -1,7 +1,6 @@
 <template>
   <div>
-    <md-toolbar
-      class="md-dense">
+    <md-toolbar class="md-dense">
       toolbar
     </md-toolbar>
     <div @click="$router.go(-1)">Close</div>

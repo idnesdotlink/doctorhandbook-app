@@ -1,6 +1,5 @@
 <template>
-  <tab-content
-    :table="table">
+  <tab-content :table="table">
     <p>hello</p>
   </tab-content>
 </template>

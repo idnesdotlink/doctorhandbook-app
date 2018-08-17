@@ -1,27 +1,28 @@
 <template>
   <div class="layout-base">
     <div class="layout-base-inner">
-      <div
-        :style="style">
+      <div :style="style">
         <md-toolbar
           class="md-primary md-dense toolbar-top"
-          md-elevation="0">
+          md-elevation="0"
+        >
           Doctor Handbook
           <div class="md-toolbar-section-end">
             <md-button
               class="md-icon-button"
-              @click="clickSearch">
+              @click="clickSearch"
+            >
               <md-icon>search</md-icon>
             </md-button>
           </div>
         </md-toolbar>
       </div>
       <div class="scroll-content">
-        <transition
-          :name="pageanimation">
+        <transition :name="pageanimation">
           <router-view
             name="content"
-            class="router-content"/>
+            class="router-content"
+          />
         </transition>
       </div>
     </div>

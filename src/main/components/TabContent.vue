@@ -4,13 +4,14 @@
     :items="items"
     :pool-size="240"
     item-height="48"
-    content-tag="md-list">
-    <template
-      slot-scope="props">
+    content-tag="md-list"
+  >
+    <template slot-scope="props">
       <md-list-item
         :key="props.itemKey"
         :style="`height: 48px`"
-        @click="click(props.item.title)">
+        @click="click(props.item.title)"
+      >
         {{ props.item.title }}
       </md-list-item>
     </template>

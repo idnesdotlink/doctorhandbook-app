@@ -5,7 +5,6 @@ import VueMaterial from 'vue-material'
 import store from './store'
 import '@assets/base'
 import Vuebar from 'vuebar'
-import VueTouch from 'vue-touch'
 import CordovaService from '@service/cordova'
 import Database from '@database'
 import VueVirtualScroller from 'vue-virtual-scroller'
@@ -22,7 +21,6 @@ if (window.location.protocol === 'file:') {
 Vue.use(Database)
 Vue.use(CordovaService)
 Vue.use(VueVirtualScroller)
-Vue.use(VueTouch, {name: 'v-touch'})
 Vue.use(VueMaterial)
 Vue.use(Vuebar)
 

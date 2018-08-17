@@ -3,7 +3,8 @@
     <div class="settings-icon">
       <md-button
         class="md-icon-button"
-        @click="$router.push({ name: 'settings' })">
+        @click="$router.push({ name: 'settings' })"
+      >
         <md-icon>settings</md-icon>
       </md-button>
     </div>
@@ -11,12 +12,14 @@
       <div class="tab-scroller">
         <md-tabs
           :md-active-tab="MdActive"
-          @md-changed="change">
+          @md-changed="change"
+        >
           <md-tab
             v-for="tab in tabs"
-            :key="tab.id"
             :id="tab.id"
-            :md-label="tab.label"/>
+            :key="tab.id"
+            :md-label="tab.label"
+          />
         </md-tabs>
       </div>
     </div>

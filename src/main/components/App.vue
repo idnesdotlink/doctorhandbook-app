@@ -1,5 +1,5 @@
 <template>
-  <layout-base id="App"/>
+  <layout-base id="App" />
 </template>
 
 <script>

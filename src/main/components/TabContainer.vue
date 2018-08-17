@@ -1,13 +1,13 @@
 <template>
   <div class="tab-container">
-    <router-view name="tab-tab"/>
-    <div
-      class="tab-content">
+    <router-view name="tab-tab" />
+    <div class="tab-content">
       <transition :name="tabanimation">
         <router-view
           name="tab-content"
           class="tab-content-scroll"
-          @scroll.native="onScroll($event)"/>
+          @scroll.native="onScroll($event)"
+        />
       </transition>
     </div>
   </div>
